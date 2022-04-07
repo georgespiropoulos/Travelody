@@ -1,4 +1,4 @@
-package com.example.travelody;
+package ihuiee.advhci.travelody;
 
 import androidx.appcompat.app.AppCompatActivity;
 
