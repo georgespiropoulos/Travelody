@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Controller.TripAddFinal">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/trip"
+            android:layout_width="293dp"
+            android:layout_height="41dp"
+            android:layout_marginTop="50dp"
+            android:text="Trip"
+            android:textAlignment="center"
+            android:textSize="30dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/ChooseTransportation"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Choose Transportation"
+            app:layout_constraintBottom_toTopOf="@+id/transportationdropdown"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.19"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <TextView
+            android:id="@+id/ChoosePrice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Choose Price"
+            app:layout_constraintBottom_toTopOf="@+id/Price"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.146"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <Spinner
+            android:id="@+id/transportationdropdown"
+            android:layout_width="314dp"
+            android:layout_height="52dp"
+            android:layout_marginTop="132dp"
+            android:background="@android:drawable/btn_dropdown"
+            android:spinnerMode="dropdown"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.52"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/trip"
+            tools:ignore="SpeakableTextPresentCheck" />
+
+        <Button
+            android:id="@+id/Submit"
+            android:layout_width="314dp"
+            android:layout_height="48dp"
+            android:text="Submit"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.494"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/Price"
+            app:layout_constraintVertical_bias="0.194" />
+
+        <EditText
+            android:id="@+id/Price"
+            android:layout_width="314dp"
+            android:layout_height="48dp"
+            android:layout_marginTop="52dp"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:text="Price"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.504"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/transportationdropdown" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</FrameLayout>
