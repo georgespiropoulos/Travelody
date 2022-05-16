@@ -1,20 +1,17 @@
 package ihuiee.advhci.travelody.DB;
 
+import androidx.annotation.NonNull;
 import androidx.room.ColumnInfo;
 import androidx.room.Entity;
+import androidx.room.PrimaryKey;
 
-@Entity (tableName = "travelAgencies",
-        primaryKeys = {"travel_agency_name", "travel_agency_id", "travel_agency_img"})
+@Entity (tableName = "travelAgencies")
 public class TravelAgencies {
-    @ColumnInfo(name = "travel_agency_name")
+    @ColumnInfo(name = "travel_agency_name") @NonNull
     public String nameOfTravelAgency;
 
-    @ColumnInfo(name = "travel_agency_id")
+    @ColumnInfo(name = "travel_agency_id") @NonNull @PrimaryKey
     public String idOfTravelAgency;
-
-    @ColumnInfo(name = "travel_agency_img")
-    public String imgOfTravelAgency;
-
 
     public String getNameOfTravelAgency() {
         return nameOfTravelAgency;
@@ -24,21 +21,11 @@ public class TravelAgencies {
         this.nameOfTravelAgency = nameOfTravelAgency;
     }
 
-
     public String getIdOfTravelAgency() {
         return idOfTravelAgency;
     }
 
     public void setIdOfTravelAgency( String idOfTravelAgency) {
         this.idOfTravelAgency = idOfTravelAgency;
-    }
-
-
-    public String getImgOfTravelAgency() {
-        return imgOfTravelAgency;
-    }
-
-    public void setImgOfTravelAgency( String imgOfTravelAgency) {
-        this.imgOfTravelAgency = imgOfTravelAgency;
     }
 }

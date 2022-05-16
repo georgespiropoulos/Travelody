@@ -1,20 +1,18 @@
 package ihuiee.advhci.travelody.DB;
 
+import androidx.annotation.NonNull;
 import androidx.room.ColumnInfo;
 import androidx.room.Entity;
+import androidx.room.PrimaryKey;
 
 
-@Entity(tableName = "cities",
-        primaryKeys = {"city_name", "city_id", "city_img"})
+@Entity(tableName = "cities")
 public class Cities {
-    @ColumnInfo(name = "city_name")
+    @ColumnInfo(name = "city_name") @NonNull
     public String nameOfCity;
 
-    @ColumnInfo(name = "city_id")
+    @ColumnInfo(name = "city_id") @NonNull @PrimaryKey
     public String idOfCity;
-
-    @ColumnInfo(name = "city_img")
-    public String imageOfCity;
 
     public String getNameOfCity() {
         return nameOfCity;
@@ -32,11 +30,4 @@ public class Cities {
         this.idOfCity = idOfCity;
     }
 
-    public String getImageOfCity() {
-        return imageOfCity;
-    }
-
-    public void setImageOfCity(String imageOfCity) {
-        this.imageOfCity = imageOfCity;
-    }
 }

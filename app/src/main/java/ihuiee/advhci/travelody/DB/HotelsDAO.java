@@ -10,13 +10,13 @@ import java.util.List;
 @Dao
 public interface HotelsDAO {
     @Insert
-    void insertHotel();
+    void insertHotel(Hotels hotel);
 
     @Update
-    void updateHotel();
+    void updateHotel(Hotels hotel);
 
     @Delete
-    void deleteHotel();
+    void deleteHotel(Hotels hotel);
 
     @Query("SELECT * FROM hotels")
     List<Hotels> getHotels();

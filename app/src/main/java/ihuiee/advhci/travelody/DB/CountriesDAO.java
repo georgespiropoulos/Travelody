@@ -10,13 +10,13 @@ import java.util.List;
 @Dao
 public interface CountriesDAO {
     @Insert
-    void insertCountry();
+    void insertCountry(Countries country);
 
     @Update
-    void updateCountry();
+    void updateCountry(Countries country);
 
     @Delete
-    void deleteCountry();
+    void deleteCountry(Countries country);
 
     @Query("SELECT * FROM countries")
     List<Countries> getCountries();
