@@ -97,6 +97,8 @@
             android:layout_marginTop="52dp"
             android:ems="10"
             android:inputType="date"
+            android:hint="01/01/2022"
+            android:textAlignment="center"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.504"
             app:layout_constraintStart_toStartOf="parent"
