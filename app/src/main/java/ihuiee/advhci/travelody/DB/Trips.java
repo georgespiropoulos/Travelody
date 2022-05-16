@@ -1,5 +1,6 @@
 package ihuiee.advhci.travelody.DB;
 
+import androidx.annotation.NonNull;
 import androidx.room.ColumnInfo;
 import androidx.room.Entity;
 import androidx.room.ForeignKey;
@@ -35,31 +36,31 @@ import androidx.room.PrimaryKey;
         })
 public class Trips {
     @PrimaryKey(autoGenerate = true)
-    @ColumnInfo(name = "trip_id")
+    @ColumnInfo(name = "trip_id") @NonNull
     public int idOfTrip;
 
-    @ColumnInfo(name = "trip_travel_agency_id")
+    @ColumnInfo(name = "trip_travel_agency_id") @NonNull
     public String travelAgencyIdOfTrip;
 
-    @ColumnInfo(name = "trip_country_id")
+    @ColumnInfo(name = "trip_country_id") @NonNull
     public String countryIdOfTrip;
 
-    @ColumnInfo(name = "trip_city_id")
+    @ColumnInfo(name = "trip_city_id") @NonNull
     public String cityIdOfTrip;
 
-    @ColumnInfo(name = "trip_transport_id")
+    @ColumnInfo(name = "trip_transport_id") @NonNull
     public String transportIdOfTrip;
 
-    @ColumnInfo(name = "trip_hotel_id")
+    @ColumnInfo(name = "trip_hotel_id") @NonNull
     public String hotelIdOfTrip;
 
-    @ColumnInfo(name = "trip_departure_date")
+    @ColumnInfo(name = "trip_departure_date") @NonNull
     public String departureDateOfTrip;
 
-    @ColumnInfo(name = "trip_duration")
+    @ColumnInfo(name = "trip_duration") @NonNull
     public String durationInDaysOfTrip;
 
-    @ColumnInfo(name = "trip_price")
+    @ColumnInfo(name = "trip_price") @NonNull
     public String priceOfTrip;
 
     public int getIdOfTrip() {

@@ -20,4 +20,5 @@ public interface CitiesDAO {
 
     @Query("SELECT * FROM cities")
     List<Cities> getCities();
+
 }

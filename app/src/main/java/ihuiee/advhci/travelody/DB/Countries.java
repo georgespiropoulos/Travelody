@@ -1,21 +1,18 @@
 package ihuiee.advhci.travelody.DB;
 
 
+import androidx.annotation.NonNull;
 import androidx.room.ColumnInfo;
 import androidx.room.Entity;
+import androidx.room.PrimaryKey;
 
-@Entity (tableName = "countries",
-        primaryKeys = {"country_name", "country_id", "country_img"})
+@Entity (tableName = "countries")
 public class Countries {
     @ColumnInfo(name = "country_name")
     public String nameOfCountry;
 
-    @ColumnInfo(name = "country_id")
+    @ColumnInfo(name = "country_id") @NonNull @PrimaryKey
     public String idOfCountry;
-
-    @ColumnInfo(name = "country_img")
-    public String imageOfCountry;
-
 
     public String getNameOfCountry() {
         return nameOfCountry;
@@ -32,14 +29,5 @@ public class Countries {
 
     public void setIdOfCountry( String idOfCountry) {
         this.idOfCountry = idOfCountry;
-    }
-
-
-    public String getImageOfCountry() {
-        return imageOfCountry;
-    }
-
-    public void setImageOfCountry( String imageOfCountry) {
-        this.imageOfCountry = imageOfCountry;
     }
 }

@@ -10,13 +10,13 @@ import java.util.List;
 @Dao
 public interface TravelAgenciesDAO {
     @Insert
-    void insertTravelAgency();
+    void insertTravelAgency(TravelAgencies travelAgency);
 
     @Update
-    void updateTravelAgency();
+    void updateTravelAgency(TravelAgencies travelAgency);
 
     @Delete
-    void deleteTravelAgency();
+    void deleteTravelAgency(TravelAgencies travelAgency);
 
     @Query("SELECT * FROM travelAgencies")
     List<TravelAgencies> getTravelAgencies();

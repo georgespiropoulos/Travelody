@@ -1,11 +1,12 @@
 package ihuiee.advhci.travelody.DB;
 
+import androidx.annotation.NonNull;
 import androidx.room.ColumnInfo;
 import androidx.room.Entity;
 import androidx.room.ForeignKey;
+import androidx.room.PrimaryKey;
 
 @Entity (tableName = "hotels",
-        primaryKeys = {"hotel_id", "hotel_name", "hotel_address"},
         foreignKeys = {
         @ForeignKey(entity = Countries.class,
                 parentColumns = "country_id",
@@ -18,7 +19,7 @@ import androidx.room.ForeignKey;
                 onDelete = ForeignKey.CASCADE,
                 onUpdate = ForeignKey.CASCADE)})
 public class Hotels {
-    @ColumnInfo(name = "hotel_id")
+    @ColumnInfo(name = "hotel_id") @NonNull @PrimaryKey
     public String idOfHotel;
 
     @ColumnInfo(name = "hotel_country_id")
@@ -27,10 +28,10 @@ public class Hotels {
     @ColumnInfo(name = "hotel_city_id")
     public String cityIdOfHotel;
 
-    @ColumnInfo(name = "hotel_name")
+    @ColumnInfo(name = "hotel_name") @NonNull
     public String nameOfHotel;
 
-    @ColumnInfo(name = "hotel_address")
+    @ColumnInfo(name = "hotel_address") @NonNull
     public String addressOfHotel;
 
     public String getIdOfHotel() {

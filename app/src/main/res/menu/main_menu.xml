@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:id="@+id/add"
+        android:title="Add"
+        android:icon="@mipmap/baseline_add_black_48">
+        <menu>
+            <item android:id="@+id/countryAdd"
+                android:title="Country"
+                android:icon="@mipmap/baseline_public_black_48"></item>
+            <item android:id="@+id/cityAdd"
+                android:title="City"
+                android:icon="@mipmap/baseline_location_city_black_48"></item>
+            <item android:id="@+id/hotelAdd"
+                android:title="Hotel"
+                android:icon="@mipmap/baseline_hotel_black_48"></item>
+            <item android:id="@+id/tripAdd"
+                android:title="Trip"
+                android:icon="@mipmap/baseline_luggage_black_48"></item>
+        </menu>
+    </item>
+    <item android:id="@+id/search"
+        android:title="Search"
+        android:icon="@mipmap/baseline_search_black_48">
+        <menu>
+            <item android:id="@+id/countrySearch"
+                android:title="Country"
+                android:icon="@mipmap/baseline_public_black_48"></item>
+            <item android:id="@+id/citySearch"
+                android:title="City"
+                android:icon="@mipmap/baseline_location_city_black_48"></item>
+            <item android:id="@+id/hotelSearch"
+                android:title="Hotel"
+                android:icon="@mipmap/baseline_hotel_black_48"></item>
+            <item android:id="@+id/tripSearch"
+                android:title="Trip"
+                android:icon="@mipmap/baseline_luggage_black_48"></item>
+        </menu>
+
+    </item>
+    <item android:id="@+id/exit"
+        android:title="Exit"
+        android:icon="@mipmap/baseline_exit_to_app_black_48">
+
+    </item>
+</menu>

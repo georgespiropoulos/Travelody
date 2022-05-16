@@ -1,15 +1,16 @@
 package ihuiee.advhci.travelody.DB;
 
+import androidx.annotation.NonNull;
 import androidx.room.ColumnInfo;
 import androidx.room.Entity;
+import androidx.room.PrimaryKey;
 
-@Entity (tableName = "transportation",
-        primaryKeys = {"transport_name", "transport_id"})
+@Entity (tableName = "transportation")
 public class Transportation {
-    @ColumnInfo(name = "transport_name")
+    @ColumnInfo(name = "transport_name") @NonNull
     public String nameOfTransport;
 
-    @ColumnInfo(name = "transport_id")
+    @ColumnInfo(name = "transport_id") @NonNull @PrimaryKey
     public String idOfTransport;
 
     public String getNameOfTransport() {

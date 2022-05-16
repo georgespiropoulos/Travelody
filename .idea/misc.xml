@@ -3,8 +3,12 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/MyFiles/University/AdvancedInteraction/Travelody/app/src/main/res/layout/activity_main.xml" value="0.18802083333333333" />
+        <entry key="..\:/MyFiles/University/AdvancedInteraction/Travelody/app/src/main/res/layout/activity_main.xml" value="0.36666666666666664" />
+        <entry key="..\:/MyFiles/University/AdvancedInteraction/Travelody/app/src/main/res/layout/fragment_header.xml" value="0.36666666666666664" />
+        <entry key="..\:/MyFiles/University/AdvancedInteraction/Travelody/app/src/main/res/layout/fragment_starting.xml" value="0.17395833333333333" />
         <entry key="..\:/MyFiles/University/AdvancedInteraction/Travelody/app/src/main/res/layout/landing_page.xml" value="0.33" />
+        <entry key="..\:/MyFiles/University/AdvancedInteraction/Travelody/app/src/main/res/layout/toolbar_layout.xml" value="0.36666666666666664" />
+        <entry key="..\:/MyFiles/University/AdvancedInteraction/Travelody/app/src/main/res/menu/main_menu.xml" value="0.1" />
       </map>
     </option>
   </component>
