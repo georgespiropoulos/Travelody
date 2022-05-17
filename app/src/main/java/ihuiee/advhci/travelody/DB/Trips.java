@@ -40,102 +40,99 @@ public class Trips {
     public int idOfTrip;
 
     @ColumnInfo(name = "trip_travel_agency_id") @NonNull
-    public String travelAgencyIdOfTrip;
+    public int travelAgencyIdOfTrip;
 
     @ColumnInfo(name = "trip_country_id") @NonNull
-    public String countryIdOfTrip;
+    public int countryIdOfTrip;
 
     @ColumnInfo(name = "trip_city_id") @NonNull
-    public String cityIdOfTrip;
+    public int cityIdOfTrip;
 
     @ColumnInfo(name = "trip_transport_id") @NonNull
-    public String transportIdOfTrip;
+    public int transportIdOfTrip;
 
     @ColumnInfo(name = "trip_hotel_id") @NonNull
-    public String hotelIdOfTrip;
+    public int hotelIdOfTrip;
 
     @ColumnInfo(name = "trip_departure_date") @NonNull
     public String departureDateOfTrip;
 
     @ColumnInfo(name = "trip_duration") @NonNull
-    public String durationInDaysOfTrip;
+    public int durationInDaysOfTrip;
 
     @ColumnInfo(name = "trip_price") @NonNull
-    public String priceOfTrip;
+    public float priceOfTrip;
 
     public int getIdOfTrip() {
         return idOfTrip;
     }
 
+    public void setIdOfTrip(int idOfTrip) {
+        this.idOfTrip = idOfTrip;
+    }
 
-    public String getTravelAgencyIdOfTrip() {
+    public int getTravelAgencyIdOfTrip() {
         return travelAgencyIdOfTrip;
     }
 
-    public void setTravelAgencyIdOfTrip( String travelAgencyIdOfTrip) {
+    public void setTravelAgencyIdOfTrip(int travelAgencyIdOfTrip) {
         this.travelAgencyIdOfTrip = travelAgencyIdOfTrip;
     }
 
-
-    public String getCountryIdOfTrip() {
+    public int getCountryIdOfTrip() {
         return countryIdOfTrip;
     }
 
-    public void setCountryIdOfTrip( String countryIdOfTrip) {
+    public void setCountryIdOfTrip(int countryIdOfTrip) {
         this.countryIdOfTrip = countryIdOfTrip;
     }
 
-
-    public String getCityIdOfTrip() {
+    public int getCityIdOfTrip() {
         return cityIdOfTrip;
     }
 
-    public void setCityIdOfTrip( String cityIdOfTrip) {
+    public void setCityIdOfTrip(int cityIdOfTrip) {
         this.cityIdOfTrip = cityIdOfTrip;
     }
 
-
-    public String getTransportIdOfTrip() {
+    public int getTransportIdOfTrip() {
         return transportIdOfTrip;
     }
 
-    public void setTransportIdOfTrip( String transportIdOfTrip) {
+    public void setTransportIdOfTrip(int transportIdOfTrip) {
         this.transportIdOfTrip = transportIdOfTrip;
     }
 
-
-    public String getHotelIdOfTrip() {
+    public int getHotelIdOfTrip() {
         return hotelIdOfTrip;
     }
 
-    public void setHotelIdOfTrip( String hotelIdOfTrip) {
+    public void setHotelIdOfTrip(int hotelIdOfTrip) {
         this.hotelIdOfTrip = hotelIdOfTrip;
     }
 
-
+    @NonNull
     public String getDepartureDateOfTrip() {
         return departureDateOfTrip;
     }
 
-    public void setDepartureDateOfTrip( String departureDateOfTrip) {
+    public void setDepartureDateOfTrip(@NonNull String departureDateOfTrip) {
         this.departureDateOfTrip = departureDateOfTrip;
     }
 
-
-    public String getDurationInDaysOfTrip() {
+    public int getDurationInDaysOfTrip() {
         return durationInDaysOfTrip;
     }
 
-    public void setDurationInDaysOfTrip( String durationInDaysOfTrip) {
+    public void setDurationInDaysOfTrip(int durationInDaysOfTrip) {
         this.durationInDaysOfTrip = durationInDaysOfTrip;
     }
 
-
-    public String getPriceOfTrip() {
+    public float getPriceOfTrip() {
         return priceOfTrip;
     }
 
-    public void setPriceOfTrip( String priceOfTrip) {
+    public void setPriceOfTrip(float priceOfTrip) {
         this.priceOfTrip = priceOfTrip;
     }
 }

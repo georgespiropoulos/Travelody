@@ -7,7 +7,10 @@ import androidx.fragment.app.FragmentManager;
 import androidx.appcompat.widget.Toolbar;
 import androidx.room.Room;
 import android.os.Bundle;
-import android.widget.Toast;
+import android.view.Gravity;
+import android.view.View;
+import android.widget.ImageButton;
+import android.widget.TextView;
 
 
 import com.google.android.material.navigation.NavigationView;
@@ -21,6 +24,7 @@ public class MainActivity extends AppCompatActivity {
     Toolbar toolbar;
     DrawerLayout drawerLayout;
     NavigationView navigationView;
+    ImageButton menuBtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,24 +41,54 @@ public class MainActivity extends AppCompatActivity {
 
         toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayShowTitleEnabled(false);
 
         drawerLayout = findViewById(R.id.drawer_layout);
         navigationView = findViewById(R.id.navigationView);
 
+        menuBtn=(ImageButton) findViewById(R.id.buttonMenu);
+        menuBtn.setOnClickListener(view -> {
+            drawerLayout.openDrawer(navigationView);
+        });
+
         navigationView.setNavigationItemSelectedListener((menuItem) -> {
             switch (menuItem.getItemId()) {
-                case R.id.add: {
-                    displayMessage("Add clicked");
+                case R.id.countryAdd: {
+                    fragmentManager.beginTransaction().replace(R.id.fragment_container, new CountryAdd()).commit();
                     drawerLayout.closeDrawers();
                     return true;
                 }
-                case R.id.search: {
-                    displayMessage("Search clicked");
+                case R.id.cityAdd: {
+                    fragmentManager.beginTransaction().replace(R.id.fragment_container, new CityAdd()).commit();
+                    drawerLayout.closeDrawers();
+                    return true;
+                }
+                case R.id.hotelAdd: {
+                    fragmentManager.beginTransaction().replace(R.id.fragment_container, new HotelAdd()).commit();
+                    drawerLayout.closeDrawers();
+                    return true;
+                }
+                case R.id.tripAdd: {
+                    fragmentManager.beginTransaction().replace(R.id.fragment_container, new TripAdd()).commit();
+                    drawerLayout.closeDrawers();
+                    return true;
+                }
+                case R.id.tripSearch: {
+                    fragmentManager.beginTransaction().replace(R.id.fragment_container, new Search()).commit();
+                    drawerLayout.closeDrawers();
+                    return true;
+                }
+                case R.id.update: {
+                    fragmentManager.beginTransaction().replace(R.id.fragment_container, new TripUpdate()).commit();
+                    drawerLayout.closeDrawers();
+                    return true;
+                }
+                case R.id.delete: {
+                    fragmentManager.beginTransaction().replace(R.id.fragment_container, new TripDelete()).commit();
                     drawerLayout.closeDrawers();
                     return true;
                 }
                 case R.id.exit: {
-                    displayMessage("Exit clicked");
                     drawerLayout.closeDrawers();
                     finish();
                     return true;
@@ -63,10 +97,6 @@ public class MainActivity extends AppCompatActivity {
                     return false;
             }
         });
-    }
-
-    void displayMessage(String message) {
-        Toast.makeText(this, message, Toast.LENGTH_LONG).show();
     }
 
 }

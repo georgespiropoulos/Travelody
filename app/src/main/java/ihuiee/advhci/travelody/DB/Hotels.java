@@ -4,9 +4,11 @@ import androidx.annotation.NonNull;
 import androidx.room.ColumnInfo;
 import androidx.room.Entity;
 import androidx.room.ForeignKey;
+import androidx.room.Index;
 import androidx.room.PrimaryKey;
 
 @Entity (tableName = "hotels",
+        indices = {@Index(value = {"hotel_name"}, unique = true)},
         foreignKeys = {
         @ForeignKey(entity = Countries.class,
                 parentColumns = "country_id",
@@ -19,14 +21,15 @@ import androidx.room.PrimaryKey;
                 onDelete = ForeignKey.CASCADE,
                 onUpdate = ForeignKey.CASCADE)})
 public class Hotels {
-    @ColumnInfo(name = "hotel_id") @NonNull @PrimaryKey
-    public String idOfHotel;
+    @PrimaryKey(autoGenerate = true)
+    @ColumnInfo(name = "hotel_id") @NonNull
+    public int idOfHotel;
 
-    @ColumnInfo(name = "hotel_country_id")
-    public String countryIdOfHotel;
+    @ColumnInfo(name = "hotel_country_id") @NonNull
+    public int countryNameOfHotel;
 
-    @ColumnInfo(name = "hotel_city_id")
-    public String cityIdOfHotel;
+    @ColumnInfo(name = "hotel_city_id") @NonNull
+    public int cityNameOfHotel;
 
     @ColumnInfo(name = "hotel_name") @NonNull
     public String nameOfHotel;
@@ -34,43 +37,45 @@ public class Hotels {
     @ColumnInfo(name = "hotel_address") @NonNull
     public String addressOfHotel;
 
-    public String getIdOfHotel() {
+    public int getIdOfHotel() {
         return idOfHotel;
     }
 
-    public void setIdOfHotel(String idOfHotel) {
+    public void setIdOfHotel(int idOfHotel) {
         this.idOfHotel = idOfHotel;
     }
 
-    public String getCountryIdOfHotel() {
-        return countryIdOfHotel;
+    public int getCountryNameOfHotel() {
+        return countryNameOfHotel;
     }
 
-    public void setCountryIdOfHotel(String countryIdOfHotel) {
-        this.countryIdOfHotel = countryIdOfHotel;
+    public void setCountryNameOfHotel(int countryNameOfHotel) {
+        this.countryNameOfHotel = countryNameOfHotel;
     }
 
-    public String getCityIdOfHotel() {
-        return cityIdOfHotel;
+    public int getCityNameOfHotel() {
+        return cityNameOfHotel;
     }
 
-    public void setCityIdOfHotel(String cityIdOfHotel) {
-        this.cityIdOfHotel = cityIdOfHotel;
+    public void setCityNameOfHotel(int cityNameOfHotel) {
+        this.cityNameOfHotel = cityNameOfHotel;
     }
 
+    @NonNull
     public String getNameOfHotel() {
         return nameOfHotel;
     }
 
-    public void setNameOfHotel(String nameOfHotel) {
+    public void setNameOfHotel(@NonNull String nameOfHotel) {
         this.nameOfHotel = nameOfHotel;
     }
 
+    @NonNull
     public String getAddressOfHotel() {
         return addressOfHotel;
     }
 
-    public void setAddressOfHotel(String addressOfHotel) {
+    public void setAddressOfHotel(@NonNull String addressOfHotel) {
         this.addressOfHotel = addressOfHotel;
     }
 }
