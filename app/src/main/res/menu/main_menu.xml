@@ -40,7 +40,7 @@
         </menu>
     </item>
     <item android:id="@+id/deleteMenu"
-        android:title="Update">
+        android:title="Delete">
         <menu>
             <item android:id="@+id/delete"
                 android:title="Delete Trip"

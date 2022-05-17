@@ -18,9 +18,7 @@ import ihuiee.advhci.travelody.R;
 
 public class CountryAdd extends Fragment {
 
-    public CountryAdd() {
-        // Required empty public constructor
-    }
+    public CountryAdd() {}
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
