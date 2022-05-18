@@ -7,6 +7,7 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.room.Room;
 
+import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,11 +16,14 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import ihuiee.advhci.travelody.DB.AppDatabase;
+import ihuiee.advhci.travelody.DB.Cities;
+import ihuiee.advhci.travelody.DB.CountriesDAO;
 import ihuiee.advhci.travelody.R;
 
 public class CityAdd extends Fragment {
@@ -63,10 +67,29 @@ public class CityAdd extends Fragment {
             }
 
             @Override
-            public void onNothingSelected(AdapterView<?> adapterView) {
+            public void onNothingSelected(AdapterView<?> adapterView) {}
+        });
 
+        cityAddBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(!TextUtils.isEmpty(cityName.getText().toString()) && !selectedCountry.equals(defaultSelection)){
+                    try {
+                        Cities city = new Cities();
+                        city.setNameOfCity(cityName.getText().toString());
+                        city.setIdOfCountry(db.countriesDao().getCountryIdByName(selectedCountry));
+                        db.citiesDao().insertCity(city);
+                        Toast.makeText(getActivity().getApplicationContext(), "City added", Toast.LENGTH_LONG).show();
+                    }catch (Exception e){
+                        Toast.makeText(getActivity().getApplicationContext(), "City already added", Toast.LENGTH_LONG).show();
+                    }
+
+                }else{
+                    Toast.makeText(getActivity().getApplicationContext(), "All fields are Required", Toast.LENGTH_LONG).show();
+                }
             }
         });
+
 
 
 

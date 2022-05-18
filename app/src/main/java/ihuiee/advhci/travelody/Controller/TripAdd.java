@@ -122,10 +122,10 @@ public class TripAdd extends Fragment {
         });
 
         button.setOnClickListener(view1 -> {
-            if (!selectedCity.equals(defaultSelection) && !selectedHotel.equals(defaultSelection) && !selectedCountry.equals(defaultSelection)){
+            if (!selectedCity.equals(defaultSelection) || !selectedHotel.equals(defaultSelection) || !selectedCountry.equals(defaultSelection)){
                 fragmentManager.beginTransaction().replace(R.id.fragment_container, new TripAddStep2()).commit();
             }else
-                Toast.makeText(requireActivity().getApplicationContext(),"Need to choose all 3 options",Toast.LENGTH_LONG).show();
+                Toast.makeText(requireActivity().getApplicationContext(),"All fields are Required",Toast.LENGTH_LONG).show();
         });
 
 
