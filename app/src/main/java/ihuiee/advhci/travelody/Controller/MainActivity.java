@@ -78,12 +78,12 @@ public class MainActivity extends AppCompatActivity {
                     drawerLayout.closeDrawers();
                     return true;
                 }
-                case R.id.update: {
+                case R.id.tripUpdate: {
                     fragmentManager.beginTransaction().replace(R.id.fragment_container, new TripUpdate()).commit();
                     drawerLayout.closeDrawers();
                     return true;
                 }
-                case R.id.delete: {
+                case R.id.tripDelete: {
                     fragmentManager.beginTransaction().replace(R.id.fragment_container, new TripDelete()).commit();
                     drawerLayout.closeDrawers();
                     return true;
