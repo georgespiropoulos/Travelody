@@ -11,7 +11,7 @@
         android:layout_height="match_parent">
 
         <TextView
-            android:id="@+id/trip"
+            android:id="@+id/CountryAddTitle"
             android:layout_width="314dp"
             android:layout_height="41dp"
             android:layout_marginTop="50dp"
@@ -56,20 +56,20 @@
             android:id="@+id/TravelAgencyDropDown"
             android:layout_width="314dp"
             android:layout_height="52dp"
-            android:layout_marginTop="96dp"
+            android:layout_marginTop="56dp"
             android:background="@android:drawable/btn_dropdown"
             android:spinnerMode="dropdown"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.495"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/trip"
+            app:layout_constraintTop_toBottomOf="@+id/CountryAddTitle"
             tools:ignore="SpeakableTextPresentCheck" />
 
         <Spinner
             android:id="@+id/durationdropdown"
             android:layout_width="314dp"
             android:layout_height="52dp"
-            android:layout_marginTop="48dp"
+            android:layout_marginTop="56dp"
             android:background="@android:drawable/btn_dropdown"
             android:spinnerMode="dropdown"
             app:layout_constraintEnd_toEndOf="parent"
@@ -79,25 +79,26 @@
             tools:ignore="SpeakableTextPresentCheck" />
 
         <Button
-            android:id="@+id/NEXT"
+            android:id="@+id/TripAddNextButton"
             android:layout_width="314dp"
             android:layout_height="48dp"
+            android:layout_marginTop="56dp"
+            android:background="@color/brown"
             android:text="NEXT"
-            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.494"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/durationdropdown"
-            app:layout_constraintVertical_bias="0.261" />
+            tools:ignore="TextContrastCheck" />
 
         <EditText
             android:id="@+id/date"
             android:layout_width="314dp"
             android:layout_height="52dp"
-            android:layout_marginTop="52dp"
+            android:layout_marginTop="56dp"
             android:ems="10"
-            android:inputType="date"
             android:hint="01/01/2022"
+            android:inputType="date"
             android:textAlignment="center"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.504"

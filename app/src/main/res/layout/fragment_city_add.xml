@@ -8,73 +8,72 @@
 
 
     <TextView
-        android:id="@+id/trip"
+        android:id="@+id/CityAddTitle"
         android:layout_width="293dp"
         android:layout_height="41dp"
         android:layout_marginStart="50dp"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="56dp"
         android:layout_marginEnd="50dp"
         android:text="City"
         android:textAlignment="center"
         android:textSize="30dp"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.109" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/textView5"
+        android:id="@+id/CountryAddText"
         android:layout_width="98dp"
         android:layout_height="22dp"
         android:text="Add City"
         android:textSize="15dp"
-        app:layout_constraintBottom_toTopOf="@+id/editTextTextPersonName3"
+        app:layout_constraintBottom_toTopOf="@+id/CountryAddTextPlain"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.153"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/trip"
+        app:layout_constraintTop_toBottomOf="@+id/CityAddTitle"
         app:layout_constraintVertical_bias="1.0" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName3"
+        android:id="@+id/CountryAddTextPlain"
         android:layout_width="314dp"
         android:layout_height="52dp"
-        android:layout_marginTop="68dp"
+        android:layout_marginTop="56dp"
         android:ems="10"
-        android:inputType="textCapCharacters"
         android:hint="City"
+        android:inputType="textCapCharacters"
         android:textAlignment="center"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.494"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/trip" />
+        app:layout_constraintTop_toBottomOf="@+id/CityAddTitle" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/CountryAddSubmit"
         android:layout_width="314dp"
         android:layout_height="48dp"
-        android:layout_marginTop="28dp"
+        android:layout_marginTop="56dp"
         android:background="@color/brown"
         android:text="Submit"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.494"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/spinner1"
+        app:layout_constraintTop_toBottomOf="@+id/CityAddChooseCountry"
         tools:ignore="TextContrastCheck" />
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/CityAddChooseCountryText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Choose Country"
         android:textSize="15dp"
-        app:layout_constraintBottom_toTopOf="@+id/spinner1"
+        app:layout_constraintBottom_toTopOf="@+id/CityAddChooseCountry"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.157"
         app:layout_constraintStart_toStartOf="parent" />
 
     <Spinner
-        android:id="@+id/spinner1"
+        android:id="@+id/CityAddChooseCountry"
         android:layout_width="314dp"
         android:layout_height="52dp"
         android:layout_marginTop="56dp"
@@ -83,7 +82,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.494"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName3"
+        app:layout_constraintTop_toBottomOf="@+id/CountryAddTextPlain"
         tools:ignore="SpeakableTextPresentCheck" />
 
 

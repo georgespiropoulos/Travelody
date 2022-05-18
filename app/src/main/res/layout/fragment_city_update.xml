@@ -4,18 +4,18 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Controller.Search">
+    tools:context=".Controller.CityUpdate">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
         <TextView
-            android:id="@+id/SearchTitle"
+            android:id="@+id/CityUpdateTitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="56dp"
-            android:text="Search"
+            android:text="City Update"
             android:textSize="30dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.498"
@@ -23,85 +23,86 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/SearchCountry"
+            android:id="@+id/CityUpdateName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Search Country"
-            app:layout_constraintBottom_toTopOf="@+id/SearchCountryDropdown"
+            android:text="Name"
+            app:layout_constraintBottom_toTopOf="@+id/CityUpdateNameTextPlain"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.152"
+            app:layout_constraintHorizontal_bias="0.128"
             app:layout_constraintStart_toStartOf="parent" />
 
         <TextView
-            android:id="@+id/SearchCity"
+            android:id="@+id/ChooseCountryCityUpdateText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Search City"
-            app:layout_constraintBottom_toTopOf="@+id/SearchCityDropdown"
+            android:text="Choose Country"
+            app:layout_constraintBottom_toTopOf="@+id/ChooseCountryCityUpdate"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.141"
+            app:layout_constraintHorizontal_bias="0.154"
             app:layout_constraintStart_toStartOf="parent" />
 
         <TextView
-            android:id="@+id/SearchHotel"
+            android:id="@+id/CityUpdateID"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Search Hotel"
-            app:layout_constraintBottom_toTopOf="@+id/SearchHotelDropdown"
+            android:text="City ID"
+            app:layout_constraintBottom_toTopOf="@+id/CityUpdateChoose"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.141"
+            app:layout_constraintHorizontal_bias="0.129"
             app:layout_constraintStart_toStartOf="parent" />
 
-        <Spinner
-            android:id="@+id/SearchCountryDropdown"
+        <EditText
+            android:id="@+id/CityUpdateNameTextPlain"
             android:layout_width="314dp"
-            android:layout_height="52dp"
+            android:layout_height="48dp"
             android:layout_marginTop="56dp"
-            android:background="@android:drawable/btn_dropdown"
-            android:spinnerMode="dropdown"
+            android:ems="10"
+            android:hint="Name"
+            android:textAlignment="center"
+            android:inputType="textCapCharacters"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.494"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/SearchTitle"
-            tools:ignore="SpeakableTextPresentCheck" />
-
-        <Spinner
-            android:id="@+id/SearchCityDropdown"
-            android:layout_width="314dp"
-            android:layout_height="52dp"
-            android:layout_marginTop="56dp"
-            android:background="@android:drawable/btn_dropdown"
-            android:spinnerMode="dropdown"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.494"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/SearchCountryDropdown"
-            tools:ignore="SpeakableTextPresentCheck" />
-
-        <Spinner
-            android:id="@+id/SearchHotelDropdown"
-            android:layout_width="314dp"
-            android:layout_height="52dp"
-            android:layout_marginTop="56dp"
-            android:background="@android:drawable/btn_dropdown"
-            android:spinnerMode="dropdown"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.494"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/SearchCityDropdown"
-            tools:ignore="SpeakableTextPresentCheck" />
+            app:layout_constraintTop_toBottomOf="@+id/CityUpdateChoose" />
 
         <Button
-            android:id="@+id/SearchTrips"
+            android:id="@+id/CityUpdateButton"
             android:layout_width="314dp"
             android:layout_height="48dp"
             android:layout_marginTop="56dp"
             android:background="@color/brown"
-            android:text="Search Trips"
+            android:text="Update"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.494"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/SearchHotelDropdown"
+            app:layout_constraintTop_toBottomOf="@+id/ChooseCountryCityUpdate"
             tools:ignore="TextContrastCheck" />
+
+        <Spinner
+            android:id="@+id/CityUpdateChoose"
+            android:layout_width="314dp"
+            android:layout_height="52dp"
+            android:layout_marginTop="56dp"
+            android:background="@android:drawable/btn_dropdown"
+            android:spinnerMode="dropdown"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.494"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/CityUpdateTitle"
+            tools:ignore="SpeakableTextPresentCheck" />
+
+        <Spinner
+            android:id="@+id/ChooseCountryCityUpdate"
+            android:layout_width="314dp"
+            android:layout_height="52dp"
+            android:layout_marginTop="56dp"
+            android:background="@android:drawable/btn_dropdown"
+            android:spinnerMode="dropdown"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.494"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/CityUpdateNameTextPlain"
+            tools:ignore="SpeakableTextPresentCheck" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </FrameLayout>

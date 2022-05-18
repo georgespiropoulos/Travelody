@@ -4,46 +4,73 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Controller.TripAddFinal">
+    tools:context=".Controller.TravelAgencyUpdate">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
         <TextView
-            android:id="@+id/TripAddFinalTitle"
-            android:layout_width="293dp"
-            android:layout_height="41dp"
+            android:id="@+id/TravelAgencyUpdateTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_marginTop="56dp"
-            android:text="Trip"
-            android:textAlignment="center"
+            android:text="Travel Agency Update"
             android:textSize="30dp"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.495"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/ChooseTransportation"
+            android:id="@+id/TravelAgencyUpdateNameText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Choose Transportation"
-            app:layout_constraintBottom_toTopOf="@+id/TransportationDropDown"
+            android:text="Name"
+            app:layout_constraintBottom_toTopOf="@+id/TravelAgencyUpdateName"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.19"
+            app:layout_constraintHorizontal_bias="0.128"
             app:layout_constraintStart_toStartOf="parent" />
 
         <TextView
-            android:id="@+id/TripAddFinalChoosePrice"
+            android:id="@+id/TravelAgencyUpdateIDText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Choose Price"
-            app:layout_constraintBottom_toTopOf="@+id/TrilAddFinalPrice"
+            android:text="Travel Agency ID"
+            app:layout_constraintBottom_toTopOf="@+id/TravelAgencyChoose"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.146"
+            app:layout_constraintHorizontal_bias="0.156"
             app:layout_constraintStart_toStartOf="parent" />
 
+        <EditText
+            android:id="@+id/TravelAgencyUpdateName"
+            android:layout_width="314dp"
+            android:layout_height="48dp"
+            android:layout_marginTop="56dp"
+            android:ems="10"
+            android:hint="Name"
+            android:textAlignment="center"
+            android:inputType="textCapCharacters"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.494"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/TravelAgencyChoose" />
+
+        <Button
+            android:id="@+id/TravelAgencyUpdateButton"
+            android:layout_width="314dp"
+            android:layout_height="48dp"
+            android:layout_marginTop="56dp"
+            android:background="@color/brown"
+            android:text="Update"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.494"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/TravelAgencyUpdateName"
+            tools:ignore="TextContrastCheck" />
+
         <Spinner
-            android:id="@+id/TransportationDropDown"
+            android:id="@+id/TravelAgencyChoose"
             android:layout_width="314dp"
             android:layout_height="52dp"
             android:layout_marginTop="56dp"
@@ -52,35 +79,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.494"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/TripAddFinalTitle"
+            app:layout_constraintTop_toBottomOf="@+id/TravelAgencyUpdateTitle"
             tools:ignore="SpeakableTextPresentCheck" />
-
-        <Button
-            android:id="@+id/TripAddFinalSubmit"
-            android:layout_width="314dp"
-            android:layout_height="48dp"
-            android:layout_marginTop="56dp"
-            android:background="@color/brown"
-            android:text="Submit"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.494"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/TrilAddFinalPrice"
-            tools:ignore="TextContrastCheck" />
-
-        <EditText
-            android:id="@+id/TrilAddFinalPrice"
-            android:layout_width="314dp"
-            android:layout_height="48dp"
-            android:layout_marginTop="56dp"
-            android:ems="10"
-            android:hint="Price"
-            android:inputType="number"
-            android:textAlignment="center"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.494"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/TransportationDropDown" />
-
     </androidx.constraintlayout.widget.ConstraintLayout>
 </FrameLayout>

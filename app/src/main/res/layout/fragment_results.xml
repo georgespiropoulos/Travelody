@@ -4,58 +4,45 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Controller.TripUpdate">
+    tools:context=".Controller.Results">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
         <TextView
-            android:id="@+id/UpdateTrip"
+            android:id="@+id/ResultsTitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="50dp"
-            android:text="Update Trip"
+            android:layout_marginTop="24dp"
+            android:text="Results"
             android:textSize="30dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.498"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <Spinner
-            android:id="@+id/TripID"
-            android:layout_width="314dp"
-            android:layout_height="52dp"
-            android:layout_marginTop="56dp"
-            android:background="@android:drawable/btn_dropdown"
-            android:spinnerMode="dropdown"
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/ResultsView"
+            android:layout_width="413dp"
+            android:layout_height="441dp"
+            android:layout_marginTop="24dp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.494"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/UpdateTrip"
-            tools:ignore="SpeakableTextPresentCheck" />
-
-        <TextView
-            android:id="@+id/TripIDText"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Trip ID"
-            app:layout_constraintBottom_toTopOf="@+id/TripID"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.128"
-            app:layout_constraintStart_toStartOf="parent" />
+            app:layout_constraintTop_toBottomOf="@+id/ResultsTitle" />
 
         <Button
-            android:id="@+id/Next"
+            android:id="@+id/ResultsNextButton"
             android:layout_width="314dp"
             android:layout_height="48dp"
-            android:layout_marginTop="56dp"
+            android:layout_marginTop="24dp"
             android:background="@color/brown"
             android:text="Next"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.494"
+            app:layout_constraintHorizontal_bias="0.498"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/TripID"
+            app:layout_constraintTop_toBottomOf="@+id/ResultsView"
             tools:ignore="TextContrastCheck" />
     </androidx.constraintlayout.widget.ConstraintLayout>
+
 </FrameLayout>
