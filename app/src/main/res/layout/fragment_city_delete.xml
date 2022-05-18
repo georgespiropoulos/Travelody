@@ -4,25 +4,25 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Controller.TripDelete">
+    tools:context=".Controller.CityDelete">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="655dp">
 
         <TextView
-            android:id="@+id/DeleteText"
+            android:id="@+id/CityDelete"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="48dp"
-            android:text="Delete"
+            android:layout_marginTop="56dp"
+            android:text="City"
             android:textSize="30dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <Spinner
-            android:id="@+id/TripDelete"
+            android:id="@+id/CityDeleteID"
             android:layout_width="314dp"
             android:layout_height="48dp"
             android:layout_marginTop="56dp"
@@ -31,21 +31,21 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.494"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/DeleteText"
+            app:layout_constraintTop_toBottomOf="@+id/CityDelete"
             tools:ignore="SpeakableTextPresentCheck" />
 
         <TextView
-            android:id="@+id/TripIDDelete"
+            android:id="@+id/CityDeleteIDTitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Trip ID"
-            app:layout_constraintBottom_toTopOf="@+id/TripDelete"
+            android:text="City ID"
+            app:layout_constraintBottom_toTopOf="@+id/CityDeleteID"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.129"
             app:layout_constraintStart_toStartOf="parent" />
 
         <Button
-            android:id="@+id/DeleteTripButton"
+            android:id="@+id/CityDeleteButton"
             android:layout_width="314dp"
             android:layout_height="48dp"
             android:layout_marginTop="56dp"
@@ -54,8 +54,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.494"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/TripDelete"
+            app:layout_constraintTop_toBottomOf="@+id/CityDeleteID"
             tools:ignore="TextContrastCheck" />
     </androidx.constraintlayout.widget.ConstraintLayout>
-
 </FrameLayout>

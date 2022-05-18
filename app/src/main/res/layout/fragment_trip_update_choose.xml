@@ -14,7 +14,7 @@
             android:id="@+id/updateTrip"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="24dp"
+            android:layout_marginTop="20dp"
             android:text="Update Trip"
             android:textSize="30dp"
             app:layout_constraintEnd_toEndOf="parent"
@@ -128,11 +128,11 @@
             app:layout_constraintStart_toStartOf="parent" />
 
         <TextView
-            android:id="@+id/DepartureDateUpdateText"
+            android:id="@+id/DepartureDateUpdateTitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Departure Date Update"
-            app:layout_constraintBottom_toTopOf="@+id/editTextDate"
+            app:layout_constraintBottom_toTopOf="@+id/DepartureDateUpdateText"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.179"
             app:layout_constraintStart_toStartOf="parent" />
@@ -158,13 +158,13 @@
             app:layout_constraintStart_toStartOf="parent" />
 
         <EditText
-            android:id="@+id/editTextDate"
+            android:id="@+id/DepartureDateUpdateText"
             android:layout_width="314dp"
             android:layout_height="50dp"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="24dp"
             android:ems="10"
-            android:inputType="date"
             android:hint="01/01/2022"
+            android:inputType="date"
             android:textAlignment="center"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.494"
@@ -176,26 +176,28 @@
             android:id="@+id/PriceUpdateInput"
             android:layout_width="312dp"
             android:layout_height="57dp"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="24dp"
             android:ems="10"
-            android:inputType="number"
             android:hint="Price"
+            android:inputType="number"
             android:textAlignment="center"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.494"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/editTextDate" />
+            app:layout_constraintTop_toBottomOf="@+id/DepartureDateUpdateText" />
 
         <Button
             android:id="@+id/UpdateButton"
             android:layout_width="314dp"
             android:layout_height="48dp"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="24dp"
+            android:background="@color/brown"
             android:text="Update"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.505"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/PriceUpdateInput" />
+            app:layout_constraintTop_toBottomOf="@+id/PriceUpdateInput"
+            tools:ignore="TextContrastCheck" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </FrameLayout>
