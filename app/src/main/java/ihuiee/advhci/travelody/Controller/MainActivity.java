@@ -53,8 +53,8 @@ public class MainActivity extends AppCompatActivity {
 
         navigationView.setNavigationItemSelectedListener((menuItem) -> {
             switch (menuItem.getItemId()) {
-                case R.id.countryAdd: {
-                    fragmentManager.beginTransaction().replace(R.id.fragment_container, new CountryAdd()).commit();
+                case R.id.home: {
+                    fragmentManager.beginTransaction().replace(R.id.fragment_container, new StartingFragment()).commit();
                     drawerLayout.closeDrawers();
                     return true;
                 }
@@ -63,8 +63,23 @@ public class MainActivity extends AppCompatActivity {
                     drawerLayout.closeDrawers();
                     return true;
                 }
+                case R.id.countryAdd: {
+                    fragmentManager.beginTransaction().replace(R.id.fragment_container, new CountryAdd()).commit();
+                    drawerLayout.closeDrawers();
+                    return true;
+                }
                 case R.id.hotelAdd: {
                     fragmentManager.beginTransaction().replace(R.id.fragment_container, new HotelAdd()).commit();
+                    drawerLayout.closeDrawers();
+                    return true;
+                }
+                case R.id.transportationAdd: {
+                    fragmentManager.beginTransaction().replace(R.id.fragment_container, new TransportationAdd()).commit();
+                    drawerLayout.closeDrawers();
+                    return true;
+                }
+                case R.id.travelAgencyAdd: {
+                    fragmentManager.beginTransaction().replace(R.id.fragment_container, new TravelAgencyAdd()).commit();
                     drawerLayout.closeDrawers();
                     return true;
                 }
@@ -73,13 +88,88 @@ public class MainActivity extends AppCompatActivity {
                     drawerLayout.closeDrawers();
                     return true;
                 }
+                case R.id.citySearch: {
+                    fragmentManager.beginTransaction().replace(R.id.fragment_container, new Search()).commit();
+                    drawerLayout.closeDrawers();
+                    return true;
+                }
+                case R.id.countrySearch: {
+                    fragmentManager.beginTransaction().replace(R.id.fragment_container, new Search()).commit();
+                    drawerLayout.closeDrawers();
+                    return true;
+                }
+                case R.id.hotelSearch: {
+                    fragmentManager.beginTransaction().replace(R.id.fragment_container, new Search()).commit();
+                    drawerLayout.closeDrawers();
+                    return true;
+                }
+                case R.id.transportationSearch: {
+                    fragmentManager.beginTransaction().replace(R.id.fragment_container, new Search()).commit();
+                    drawerLayout.closeDrawers();
+                    return true;
+                }
+                case R.id.travelAgencySearch: {
+                    fragmentManager.beginTransaction().replace(R.id.fragment_container, new Search()).commit();
+                    drawerLayout.closeDrawers();
+                    return true;
+                }
                 case R.id.tripSearch: {
                     fragmentManager.beginTransaction().replace(R.id.fragment_container, new Search()).commit();
                     drawerLayout.closeDrawers();
                     return true;
                 }
+                case R.id.cityUpdate: {
+                    fragmentManager.beginTransaction().replace(R.id.fragment_container, new CityUpdate()).commit();
+                    drawerLayout.closeDrawers();
+                    return true;
+                }
+                case R.id.countryUpdate: {
+                    fragmentManager.beginTransaction().replace(R.id.fragment_container, new CountryUpdate()).commit();
+                    drawerLayout.closeDrawers();
+                    return true;
+                }
+                case R.id.hotelUpdate: {
+                    fragmentManager.beginTransaction().replace(R.id.fragment_container, new HotelUpdate()).commit();
+                    drawerLayout.closeDrawers();
+                    return true;
+                }
+                case R.id.transportationUpdate: {
+                    fragmentManager.beginTransaction().replace(R.id.fragment_container, new TransportationUpdate()).commit();
+                    drawerLayout.closeDrawers();
+                    return true;
+                }
+                case R.id.travelAgencyUpdate: {
+                    fragmentManager.beginTransaction().replace(R.id.fragment_container, new TravelAgencyUpdate()).commit();
+                    drawerLayout.closeDrawers();
+                    return true;
+                }
                 case R.id.tripUpdate: {
                     fragmentManager.beginTransaction().replace(R.id.fragment_container, new TripUpdate()).commit();
+                    drawerLayout.closeDrawers();
+                    return true;
+                }
+                case R.id.cityDelete: {
+                    fragmentManager.beginTransaction().replace(R.id.fragment_container, new CityDelete()).commit();
+                    drawerLayout.closeDrawers();
+                    return true;
+                }
+                case R.id.countryDelete: {
+                    fragmentManager.beginTransaction().replace(R.id.fragment_container, new CountryDelete()).commit();
+                    drawerLayout.closeDrawers();
+                    return true;
+                }
+                case R.id.hotelDelete: {
+                    fragmentManager.beginTransaction().replace(R.id.fragment_container, new HotelDelete()).commit();
+                    drawerLayout.closeDrawers();
+                    return true;
+                }
+                case R.id.transportationDelete: {
+                    fragmentManager.beginTransaction().replace(R.id.fragment_container, new TransportationDelete()).commit();
+                    drawerLayout.closeDrawers();
+                    return true;
+                }
+                case R.id.travelAgencyDelete: {
+                    fragmentManager.beginTransaction().replace(R.id.fragment_container, new TravelAgencyDelete()).commit();
                     drawerLayout.closeDrawers();
                     return true;
                 }
