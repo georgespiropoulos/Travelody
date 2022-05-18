@@ -29,7 +29,7 @@ import ihuiee.advhci.travelody.R;
 
 public class TripAdd extends Fragment {
 
-    Button button;
+    Button nextButton;
     String selectedCountry;
     String selectedCity;
     String selectedHotel;
@@ -38,6 +38,7 @@ public class TripAdd extends Fragment {
     List<String> citiesList = new ArrayList<>();
     List<String> hotelList = new ArrayList<>();
     String defaultSelection = "CHOOSE";
+    Bundle args = new Bundle();
 
 
     public TripAdd() {
@@ -56,7 +57,7 @@ public class TripAdd extends Fragment {
         super.onViewCreated(view, savedInstanceState);
 
         fragmentManager = getParentFragmentManager();
-        button=view.findViewById(R.id.TripAddNextButton);
+        nextButton=view.findViewById(R.id.TripAddNextButton);
         AppDatabase db = Room.databaseBuilder(requireContext(), AppDatabase.class, "TravelodyDB").allowMainThreadQueries().build();
         Spinner country=view.findViewById(R.id.CountryDropdown);
         ArrayAdapter countryAdapter = new ArrayAdapter<String>(getContext(), androidx.appcompat.R.layout.support_simple_spinner_dropdown_item, new ArrayList<>());
@@ -64,6 +65,12 @@ public class TripAdd extends Fragment {
         ArrayAdapter cityAdapter = new ArrayAdapter<String>(getContext(), androidx.appcompat.R.layout.support_simple_spinner_dropdown_item, new ArrayList<>());
         Spinner hotel=view.findViewById(R.id.HotelDropDown);
         ArrayAdapter hotelAdapter = new ArrayAdapter<String>(getContext(), androidx.appcompat.R.layout.support_simple_spinner_dropdown_item, new ArrayList<>());
+
+        cityAdapter.setDropDownViewResource(androidx.appcompat.R.layout.support_simple_spinner_dropdown_item);
+        city.setAdapter(cityAdapter);
+
+        hotelAdapter.setDropDownViewResource(androidx.appcompat.R.layout.support_simple_spinner_dropdown_item);
+        hotel.setAdapter(hotelAdapter);
 
         countriesList.add(0,defaultSelection);
         citiesList.add(0, defaultSelection);
@@ -79,7 +86,33 @@ public class TripAdd extends Fragment {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 selectedCountry = parent.getItemAtPosition(position).toString();
-                citiesList.addAll(db.citiesDao().getCitiesOfCountry(db.countriesDao().getCountryIdByName(selectedCountry)));
+                ArrayList<String> tempList = new ArrayList<>();
+                tempList.addAll(db.citiesDao().getCitiesOfCountry(db.countriesDao().getCountryIdByName(selectedCountry)));
+                for (int i=1; i < tempList.size()+1; i++) {
+                    try {
+                        citiesList.set(i, tempList.get(i - 1));
+                    }catch (Exception e){
+                        citiesList.add(i, tempList.get(i - 1));
+                    }
+                }
+                if (tempList.size()+1 < citiesList.size()){
+                    for (int j = tempList.size()+1; j < citiesList.size(); j++){
+                        citiesList.remove(j);
+                    }
+                }
+
+                tempList.clear();
+                cityAdapter.clear();
+                hotelList.clear();
+                hotelList.add(0,defaultSelection);
+                hotelAdapter.clear();
+                hotelAdapter.addAll(hotelList);
+                cityAdapter.addAll(citiesList);
+                cityAdapter.notifyDataSetChanged();
+                city.setSelection(0);
+                hotel.setSelection(0);
+
+
             }
 
             @Override
@@ -88,15 +121,35 @@ public class TripAdd extends Fragment {
             }
         });
 
-        cityAdapter.setDropDownViewResource(androidx.appcompat.R.layout.support_simple_spinner_dropdown_item);
-        city.setAdapter(cityAdapter);
-        cityAdapter.addAll(citiesList);
-        cityAdapter.notifyDataSetChanged();
+
+//        System.out.println(citiesList);
         city.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 selectedCity = parent.getItemAtPosition(position).toString();
-                hotelList.addAll(db.hotelsDao().getHotelsOfCity(db.citiesDao().getCitiesIdByName(selectedCity)));
+                ArrayList<String> tempList = new ArrayList<>();
+                tempList.addAll(db.hotelsDao().getHotelsOfCity(db.citiesDao().getCitiesIdByName(selectedCity)));
+                for (int i=1; i < tempList.size()+1; i++) {
+                    try {
+                        hotelList.set(i, tempList.get(i - 1));
+                    }catch (Exception e){
+                        hotelList.add(i, tempList.get(i - 1));
+                    }
+                    System.out.println(hotelList);
+                }
+                if (tempList.size()+1 < hotelList.size()){
+                    for (int j = tempList.size()+1; j < hotelList.size(); j++){
+                        hotelList.remove(j);
+                    }
+                }
+
+                tempList.clear();
+                hotelAdapter.clear();
+                hotelAdapter.addAll(hotelList);
+                hotelAdapter.notifyDataSetChanged();
+                hotel.setSelection(0);
+
+
             }
 
             @Override
@@ -105,10 +158,6 @@ public class TripAdd extends Fragment {
             }
         });
 
-        hotelAdapter.setDropDownViewResource(androidx.appcompat.R.layout.support_simple_spinner_dropdown_item);
-        hotel.setAdapter(hotelAdapter);
-        hotelAdapter.addAll(hotelList);
-        hotelAdapter.notifyDataSetChanged();
         hotel.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
@@ -121,8 +170,13 @@ public class TripAdd extends Fragment {
             }
         });
 
-        button.setOnClickListener(view1 -> {
-            if (!selectedCity.equals(defaultSelection) || !selectedHotel.equals(defaultSelection) || !selectedCountry.equals(defaultSelection)){
+        nextButton.setOnClickListener(view1 -> {
+            if (!selectedCity.equals(defaultSelection) && !selectedHotel.equals(defaultSelection) && !selectedCountry.equals(defaultSelection)){
+                args.putString("Selected City", selectedCity);
+                args.putString("Selected Country", selectedCountry);
+                args.putString("Selected Hotel", selectedHotel);
+                TripAddStep2 newFrag = new TripAddStep2();
+                newFrag.setArguments(args);
                 fragmentManager.beginTransaction().replace(R.id.fragment_container, new TripAddStep2()).commit();
             }else
                 Toast.makeText(requireActivity().getApplicationContext(),"All fields are Required",Toast.LENGTH_LONG).show();

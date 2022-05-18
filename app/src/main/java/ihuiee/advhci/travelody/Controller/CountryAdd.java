@@ -10,6 +10,7 @@ import androidx.fragment.app.Fragment;
 
 import androidx.room.Room;
 
+import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -40,19 +41,23 @@ public class CountryAdd extends Fragment {
         super.onViewCreated(view, savedInstanceState);
         AppDatabase db = Room.databaseBuilder(requireContext(), AppDatabase.class, "TravelodyDB").allowMainThreadQueries().build();
 
-        countryName = (EditText) view.findViewById(R.id.CityAddEditText);
-        countryAddBtn = (Button) view.findViewById(R.id.CountryAddSubmit);
+        countryName = view.findViewById(R.id.CountryAddEditText);
+        countryAddBtn = view.findViewById(R.id.CountryAddSubmit);
 
         countryAddBtn.setOnClickListener(view1 -> {
-            try {
-                Countries country = new Countries();
-                country.setNameOfCountry(countryName.getText().toString());
-                db.countriesDao().insertCountry(country);
+            if (!TextUtils.isEmpty(countryName.getText().toString())) {
+                try {
+                    Countries country = new Countries();
+                    country.setNameOfCountry(countryName.getText().toString());
+                    db.countriesDao().insertCountry(country);
                 countryName.setText("");
-                Toast.makeText(requireActivity().getApplicationContext(),"Country Added", Toast.LENGTH_LONG).show();
-            }catch (Exception e){
+                    Toast.makeText(requireActivity().getApplicationContext(), "Country Added", Toast.LENGTH_LONG).show();
+                } catch (Exception e) {
                 countryName.setText("");
-                Toast.makeText(requireActivity().getApplicationContext(), "Country Already Exist", Toast.LENGTH_LONG).show();
+                    Toast.makeText(requireActivity().getApplicationContext(), "Country Already Exist", Toast.LENGTH_LONG).show();
+                }
+            }else{
+                Toast.makeText(requireActivity().getApplicationContext(), "Empty field", Toast.LENGTH_LONG).show();
             }
 
         });

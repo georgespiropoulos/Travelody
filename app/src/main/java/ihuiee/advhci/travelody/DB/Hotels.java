@@ -8,7 +8,6 @@ import androidx.room.Index;
 import androidx.room.PrimaryKey;
 
 @Entity (tableName = "hotels",
-        indices = {@Index(value = {"hotel_name"}, unique = true)},
         foreignKeys = {
         @ForeignKey(entity = Countries.class,
                 parentColumns = "country_id",
@@ -26,10 +25,10 @@ public class Hotels {
     public int idOfHotel;
 
     @ColumnInfo(name = "hotel_country_id") @NonNull
-    public int countryNameOfHotel;
+    public int countryIdOfHotel;
 
     @ColumnInfo(name = "hotel_city_id") @NonNull
-    public int cityNameOfHotel;
+    public int cityIdOfHotel;
 
     @ColumnInfo(name = "hotel_name") @NonNull
     public String nameOfHotel;
@@ -45,20 +44,20 @@ public class Hotels {
         this.idOfHotel = idOfHotel;
     }
 
-    public int getCountryNameOfHotel() {
-        return countryNameOfHotel;
+    public int getCountryIdOfHotel() {
+        return countryIdOfHotel;
     }
 
-    public void setCountryNameOfHotel(int countryNameOfHotel) {
-        this.countryNameOfHotel = countryNameOfHotel;
+    public void setCountryIdOfHotel(int countryIdOfHotel) {
+        this.countryIdOfHotel = countryIdOfHotel;
     }
 
-    public int getCityNameOfHotel() {
-        return cityNameOfHotel;
+    public int getCityIdOfHotel() {
+        return cityIdOfHotel;
     }
 
-    public void setCityNameOfHotel(int cityNameOfHotel) {
-        this.cityNameOfHotel = cityNameOfHotel;
+    public void setCityIdOfHotel(int cityIdOfHotel) {
+        this.cityIdOfHotel = cityIdOfHotel;
     }
 
     @NonNull
