@@ -21,4 +21,13 @@ public interface CitiesDAO {
     @Query("SELECT * FROM cities")
     List<Cities> getCities();
 
+    @Query("SELECT city_name FROM cities")
+    List<String> getCityNames();
+
+    @Query("SELECT city_name FROM cities WHERE country_id = :countryID")
+    List<String> getCitiesOfCountry(int countryID);
+
+    @Query("SELECT city_id FROM cities WHERE city_name = :name")
+    int getCitiesIdByName(String name);
+
 }
