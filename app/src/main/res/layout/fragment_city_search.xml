@@ -4,58 +4,55 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Controller.CountryDelete">
+    tools:context=".Controller.CitySearch">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
         <TextView
-            android:id="@+id/CountryDeleteTitle"
+            android:id="@+id/CitySearchTitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="56dp"
-            android:text="Country"
+            android:text="Search City"
             android:textSize="30dp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.498"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <Button
-            android:id="@+id/CountryDelete"
-            android:layout_width="314dp"
-            android:layout_height="48dp"
-            android:layout_marginTop="56dp"
-            android:background="@color/brown"
-            android:text="Delete"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.515"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/ChooseCityHotelUpdate"
-            tools:ignore="TextContrastCheck" />
-
         <Spinner
-            android:id="@+id/ChooseCityHotelUpdate"
+            android:id="@+id/CitySearchChooseCountry"
             android:layout_width="314dp"
             android:layout_height="48dp"
             android:layout_marginTop="56dp"
             android:background="@android:drawable/btn_dropdown"
-            android:spinnerMode="dropdown"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.51"
+            app:layout_constraintHorizontal_bias="0.494"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/CountryDeleteTitle"
+            app:layout_constraintTop_toBottomOf="@+id/CitySearchTitle"
             tools:ignore="SpeakableTextPresentCheck" />
 
         <TextView
-            android:id="@+id/CountryDeleteIDTitle"
-            android:layout_width="72dp"
-            android:layout_height="22dp"
-            android:text="Country ID"
-            app:layout_constraintBottom_toTopOf="@+id/ChooseCityHotelUpdate"
+            android:id="@+id/CitySearchChooseCountryText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Choose Country"
+            app:layout_constraintBottom_toTopOf="@+id/CitySearchChooseCountry"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.147"
+            app:layout_constraintHorizontal_bias="0.157"
             app:layout_constraintStart_toStartOf="parent" />
+
+        <Button
+            android:id="@+id/CitySearchButton"
+            android:layout_width="314dp"
+            android:layout_height="48dp"
+            android:layout_marginTop="56dp"
+            android:background="@color/brown"
+            android:text="Search City"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/CitySearchChooseCountry" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </FrameLayout>

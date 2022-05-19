@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Controller.HotelSearch">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/HotelSearchTitle"
+            android:layout_width="314dp"
+            android:layout_height="48dp"
+            android:layout_marginTop="56dp"
+            android:text="Search Hotel"
+            android:textAlignment="center"
+            android:textSize="30dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Spinner
+            android:id="@+id/HotelSearchChooseCountry"
+            android:layout_width="314dp"
+            android:layout_height="48dp"
+            android:layout_marginTop="56dp"
+            android:background="@android:drawable/btn_dropdown"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.494"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/HotelSearchTitle" />
+
+        <TextView
+            android:id="@+id/HotelSearchChooseCountryText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Choose Country"
+            app:layout_constraintBottom_toTopOf="@+id/HotelSearchChooseCountry"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.154"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <TextView
+            android:id="@+id/HotelSearchChooseCityText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Choose City"
+            app:layout_constraintBottom_toTopOf="@+id/HotelSearchChooseCity"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.142"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <Spinner
+            android:id="@+id/HotelSearchChooseCity"
+            android:layout_width="314dp"
+            android:layout_height="48dp"
+            android:layout_marginTop="56dp"
+            android:background="@android:drawable/btn_dropdown"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.494"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/HotelSearchChooseCountry" />
+
+        <Button
+            android:id="@+id/HotelSearchButton"
+            android:layout_width="314dp"
+            android:layout_height="48dp"
+            android:layout_marginTop="56dp"
+            android:background="@color/brown"
+            android:text="Search Hotel"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/HotelSearchChooseCity" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</FrameLayout>
