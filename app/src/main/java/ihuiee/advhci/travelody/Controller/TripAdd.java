@@ -1,13 +1,7 @@
 package ihuiee.advhci.travelody.Controller;
 
+import android.content.Intent;
 import android.os.Bundle;
-
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentManager;
-import androidx.room.Room;
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,16 +9,20 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.Spinner;
-import android.widget.SpinnerAdapter;
 import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.room.Room;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
 import ihuiee.advhci.travelody.DB.AppDatabase;
-import ihuiee.advhci.travelody.DB.Countries;
-import ihuiee.advhci.travelody.DB.CountriesDAO;
+import ihuiee.advhci.travelody.DB.Trips;
 import ihuiee.advhci.travelody.R;
 
 public class TripAdd extends Fragment {
@@ -38,7 +36,6 @@ public class TripAdd extends Fragment {
     List<String> citiesList = new ArrayList<>();
     List<String> hotelList = new ArrayList<>();
     String defaultSelection = "CHOOSE";
-    Bundle args = new Bundle();
 
 
     public TripAdd() {
@@ -172,12 +169,19 @@ public class TripAdd extends Fragment {
 
         nextButton.setOnClickListener(view1 -> {
             if (!selectedCity.equals(defaultSelection) && !selectedHotel.equals(defaultSelection) && !selectedCountry.equals(defaultSelection)){
-                args.putString("Selected City", selectedCity);
-                args.putString("Selected Country", selectedCountry);
-                args.putString("Selected Hotel", selectedHotel);
-                TripAddStep2 newFrag = new TripAddStep2();
-                newFrag.setArguments(args);
-                fragmentManager.beginTransaction().replace(R.id.fragment_container, new TripAddStep2()).commit();
+                Trips trip = new Trips();
+                trip.setCountryIdOfTrip(db.countriesDao().getCountryIdByName(selectedCountry));
+                trip.setCityIdOfTrip(db.citiesDao().getCitiesIdByName(selectedCity));
+                trip.setHotelIdOfTrip(db.hotelsDao().getHotelIdByHotelName(selectedHotel));
+                try{
+                   Bundle bundle = new Bundle();
+                   bundle.putSerializable("trip", trip);
+                   TripAddStep2 trip2 = new TripAddStep2();
+                   trip2.setArguments(bundle);
+                   fragmentManager.beginTransaction().replace(R.id.fragment_container, trip2).commit();
+                }catch (Exception e){
+                    Toast.makeText(requireActivity().getApplicationContext(),"Error",Toast.LENGTH_LONG).show();
+                }
             }else
                 Toast.makeText(requireActivity().getApplicationContext(),"All fields are Required",Toast.LENGTH_LONG).show();
         });

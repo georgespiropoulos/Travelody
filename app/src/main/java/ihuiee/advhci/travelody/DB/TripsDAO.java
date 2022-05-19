@@ -20,4 +20,6 @@ public interface TripsDAO {
 
     @Query("SELECT * FROM trips")
     List<Trips> getTrips();
+
+
 }
