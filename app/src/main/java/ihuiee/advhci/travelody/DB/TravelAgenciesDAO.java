@@ -20,4 +20,7 @@ public interface TravelAgenciesDAO {
 
     @Query("SELECT * FROM travelAgencies")
     List<TravelAgencies> getTravelAgencies();
+
+    @Query("SELECT travel_agency_name FROM travelAgencies")
+    List<String> getTravelAgencyNames();
 }
