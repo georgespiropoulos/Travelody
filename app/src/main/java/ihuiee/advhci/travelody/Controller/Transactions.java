@@ -12,10 +12,10 @@ import ihuiee.advhci.travelody.R;
 
 /**
  * A simple {@link Fragment} subclass.
- * Use the {@link Results#newInstance} factory method to
+ * Use the {@link Transactions#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class Results extends Fragment {
+public class Transactions extends Fragment {
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -26,7 +26,7 @@ public class Results extends Fragment {
     private String mParam1;
     private String mParam2;
 
-    public Results() {
+    public Transactions() {
         // Required empty public constructor
     }
 
@@ -36,11 +36,11 @@ public class Results extends Fragment {
      *
      * @param param1 Parameter 1.
      * @param param2 Parameter 2.
-     * @return A new instance of fragment fragment_results.
+     * @return A new instance of fragment Transactions.
      */
     // TODO: Rename and change types and number of parameters
-    public static Results newInstance(String param1, String param2) {
-        Results fragment = new Results();
+    public static Transactions newInstance(String param1, String param2) {
+        Transactions fragment = new Transactions();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -61,6 +61,6 @@ public class Results extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_results, container, false);
+        return inflater.inflate(R.layout.fragment_transactions, container, false);
     }
 }

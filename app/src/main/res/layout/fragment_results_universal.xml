@@ -4,17 +4,17 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Controller.Results">
+    tools:context=".Controller.ResultsUniversal">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
         <TextView
-            android:id="@+id/ResultsTitle"
+            android:id="@+id/ResultsUniversal"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="24dp"
+            android:layout_marginTop="56dp"
             android:text="Results"
             android:textSize="30dp"
             app:layout_constraintEnd_toEndOf="parent"
@@ -23,26 +23,11 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/ResultsView"
-            android:layout_width="413dp"
-            android:layout_height="441dp"
-            android:layout_marginTop="24dp"
+            android:layout_width="411dp"
+            android:layout_height="551dp"
+            android:layout_marginTop="12dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/ResultsTitle" />
-
-        <Button
-            android:id="@+id/ResultsNextButton"
-            android:layout_width="314dp"
-            android:layout_height="48dp"
-            android:layout_marginTop="24dp"
-            android:background="@color/brown"
-            android:text="Next"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.498"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/ResultsView"
-            tools:ignore="TextContrastCheck" />
+            app:layout_constraintTop_toBottomOf="@+id/ResultsUniversal" />
     </androidx.constraintlayout.widget.ConstraintLayout>
-
 </FrameLayout>
