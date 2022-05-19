@@ -19,6 +19,8 @@ import android.widget.Spinner;
 import android.widget.Toast;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
 import ihuiee.advhci.travelody.DB.AppDatabase;
@@ -53,8 +55,10 @@ public class CityAdd extends Fragment {
         Spinner country=view.findViewById(R.id.CityAddChooseCountry);
         ArrayAdapter countryAdapter = new ArrayAdapter<String>(getContext(), androidx.appcompat.R.layout.support_simple_spinner_dropdown_item, new ArrayList<>());
 
-        countriesList.add(0,defaultSelection);
+
         countriesList.addAll(db.countriesDao().getCountryNames());
+        countriesList.sort(String::compareToIgnoreCase);
+        countriesList.add(0,defaultSelection);
 
         countryAdapter.setDropDownViewResource(androidx.appcompat.R.layout.support_simple_spinner_dropdown_item);
         country.setAdapter(countryAdapter);

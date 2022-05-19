@@ -23,4 +23,7 @@ public interface TravelAgenciesDAO {
 
     @Query("SELECT travel_agency_name FROM travelAgencies")
     List<String> getTravelAgencyNames();
+
+    @Query("SELECT travel_agency_id FROM travelAgencies WHERE travel_agency_name = :name")
+    int getTravelAgencyIdByName(String name);
 }

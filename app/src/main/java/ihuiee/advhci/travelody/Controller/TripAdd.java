@@ -20,6 +20,7 @@ import androidx.room.Room;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
+import java.util.stream.Collectors;
 
 import ihuiee.advhci.travelody.DB.AppDatabase;
 import ihuiee.advhci.travelody.DB.Trips;
@@ -69,11 +70,9 @@ public class TripAdd extends Fragment {
         hotelAdapter.setDropDownViewResource(androidx.appcompat.R.layout.support_simple_spinner_dropdown_item);
         hotel.setAdapter(hotelAdapter);
 
-        countriesList.add(0,defaultSelection);
-        citiesList.add(0, defaultSelection);
-        hotelList.add(0,defaultSelection);
-
         countriesList.addAll(db.countriesDao().getCountryNames());
+        countriesList.sort(String::compareToIgnoreCase);
+        countriesList.add(0,defaultSelection);
 
         countryAdapter.setDropDownViewResource(androidx.appcompat.R.layout.support_simple_spinner_dropdown_item);
         country.setAdapter(countryAdapter);
@@ -83,33 +82,21 @@ public class TripAdd extends Fragment {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 selectedCountry = parent.getItemAtPosition(position).toString();
-                ArrayList<String> tempList = new ArrayList<>();
-                tempList.addAll(db.citiesDao().getCitiesOfCountry(db.countriesDao().getCountryIdByName(selectedCountry)));
-                for (int i=1; i < tempList.size()+1; i++) {
-                    try {
-                        citiesList.set(i, tempList.get(i - 1));
-                    }catch (Exception e){
-                        citiesList.add(i, tempList.get(i - 1));
-                    }
-                }
-                if (tempList.size()+1 < citiesList.size()){
-                    for (int j = tempList.size()+1; j < citiesList.size(); j++){
-                        citiesList.remove(j);
-                    }
-                }
+                citiesList.clear();
+                citiesList.addAll(db.citiesDao().getCitiesOfCountry(db.countriesDao().getCountryIdByName(selectedCountry)));
 
-                tempList.clear();
-                cityAdapter.clear();
                 hotelList.clear();
                 hotelList.add(0,defaultSelection);
                 hotelAdapter.clear();
                 hotelAdapter.addAll(hotelList);
+                hotel.setSelection(0);
+
+                citiesList.sort(String::compareToIgnoreCase);
+                citiesList.add(0, defaultSelection);
+                cityAdapter.clear();
                 cityAdapter.addAll(citiesList);
                 cityAdapter.notifyDataSetChanged();
                 city.setSelection(0);
-                hotel.setSelection(0);
-
-
             }
 
             @Override
@@ -124,29 +111,15 @@ public class TripAdd extends Fragment {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 selectedCity = parent.getItemAtPosition(position).toString();
-                ArrayList<String> tempList = new ArrayList<>();
-                tempList.addAll(db.hotelsDao().getHotelsOfCity(db.citiesDao().getCitiesIdByName(selectedCity)));
-                for (int i=1; i < tempList.size()+1; i++) {
-                    try {
-                        hotelList.set(i, tempList.get(i - 1));
-                    }catch (Exception e){
-                        hotelList.add(i, tempList.get(i - 1));
-                    }
-                    System.out.println(hotelList);
-                }
-                if (tempList.size()+1 < hotelList.size()){
-                    for (int j = tempList.size()+1; j < hotelList.size(); j++){
-                        hotelList.remove(j);
-                    }
-                }
+                hotelList.clear();
+                hotelList.addAll(db.hotelsDao().getHotelsOfCity(db.citiesDao().getCitiesIdByName(selectedCity)));
 
-                tempList.clear();
+                hotelList.sort(String::compareToIgnoreCase);
+                hotelList.add(0,defaultSelection);
                 hotelAdapter.clear();
                 hotelAdapter.addAll(hotelList);
                 hotelAdapter.notifyDataSetChanged();
                 hotel.setSelection(0);
-
-
             }
 
             @Override
