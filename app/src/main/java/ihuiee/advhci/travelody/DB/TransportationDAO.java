@@ -20,4 +20,7 @@ public interface TransportationDAO {
 
     @Query("SELECT * FROM transportation")
     List<Transportation> getTransportations();
+
+    @Query("SELECT transport_name FROM transportation")
+    List<String> getTransportationNames();
 }
