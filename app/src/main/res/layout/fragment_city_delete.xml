@@ -22,7 +22,7 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <Spinner
-            android:id="@+id/CityDeleteID"
+            android:id="@+id/CityDeleteName"
             android:layout_width="314dp"
             android:layout_height="48dp"
             android:layout_marginTop="56dp"
@@ -31,30 +31,53 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.494"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/CityDelete"
+            app:layout_constraintTop_toBottomOf="@+id/spinner3"
             tools:ignore="SpeakableTextPresentCheck" />
 
         <TextView
             android:id="@+id/CityDeleteIDTitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="City ID"
-            app:layout_constraintBottom_toTopOf="@+id/CityDeleteID"
+            android:text="Choose City"
+            app:layout_constraintBottom_toTopOf="@+id/CityDeleteName"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.129"
+            app:layout_constraintHorizontal_bias="0.142"
             app:layout_constraintStart_toStartOf="parent" />
 
         <Button
             android:id="@+id/CityDeleteButton"
             android:layout_width="314dp"
             android:layout_height="48dp"
-            android:layout_marginTop="56dp"
+            android:layout_marginBottom="34dp"
             android:background="@color/brown"
             android:text="Delete"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.494"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/CityDeleteID"
             tools:ignore="TextContrastCheck" />
+
+        <Spinner
+            android:id="@+id/spinner3"
+            android:layout_width="314dp"
+            android:layout_height="48dp"
+            android:layout_marginTop="56dp"
+            android:background="@android:drawable/btn_dropdown"
+            android:spinnerMode="dropdown"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/CityDelete" />
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="49dp"
+            android:layout_marginEnd="262dp"
+            android:text="Choose Country"
+            app:layout_constraintBottom_toTopOf="@+id/spinner3"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 </FrameLayout>

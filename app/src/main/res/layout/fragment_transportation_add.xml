@@ -50,13 +50,13 @@
             android:id="@+id/TransportationSubmit"
             android:layout_width="314dp"
             android:layout_height="48dp"
-            android:layout_marginTop="56dp"
+            android:layout_marginBottom="34dp"
             android:background="@color/brown"
             android:text="Submit"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.494"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/TransportationAddName"
             tools:ignore="TextContrastCheck" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </FrameLayout>
