@@ -37,12 +37,12 @@
 
         <TextView
             android:id="@+id/TransportationDeleteText"
-            android:layout_width="116dp"
+            android:layout_width="wrap_content"
             android:layout_height="20dp"
-            android:text="Transportation ID"
+            android:text="Transportation Name"
             app:layout_constraintBottom_toTopOf="@+id/TransportationDeleteChoose"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.158"
+            app:layout_constraintHorizontal_bias="0.172"
             app:layout_constraintStart_toStartOf="parent" />
 
         <Button
