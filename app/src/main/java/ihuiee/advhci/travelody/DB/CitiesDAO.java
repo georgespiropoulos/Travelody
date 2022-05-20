@@ -30,4 +30,7 @@ public interface CitiesDAO {
     @Query("SELECT city_id FROM cities WHERE city_name = :name")
     int getCitiesIdByName(String name);
 
+    @Query("SELECT * FROM cities WHERE city_id = :id")
+    Cities getCityById(int id);
+
 }

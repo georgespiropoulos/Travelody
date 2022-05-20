@@ -29,7 +29,6 @@ public class HotelAdd extends Fragment {
 
     List<String> countriesList = new ArrayList<>();
     List<String> citiesList = new ArrayList<>();
-    List<String> hotelList = new ArrayList<>();
     String selectedCountry;
     String selectedCity;
     String defaultSelection = "CHOOSE";

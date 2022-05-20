@@ -8,7 +8,7 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="655dp">
+        android:layout_height="match_parent">
 
         <TextView
             android:id="@+id/CityDelete"
@@ -31,7 +31,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.494"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/spinner3"
+            app:layout_constraintTop_toBottomOf="@+id/cityDeleteDropdown"
             tools:ignore="SpeakableTextPresentCheck" />
 
         <TextView
@@ -58,7 +58,7 @@
             tools:ignore="TextContrastCheck" />
 
         <Spinner
-            android:id="@+id/spinner3"
+            android:id="@+id/cityDeleteDropdown"
             android:layout_width="314dp"
             android:layout_height="48dp"
             android:layout_marginTop="56dp"
@@ -75,7 +75,7 @@
             android:layout_marginStart="49dp"
             android:layout_marginEnd="262dp"
             android:text="Choose Country"
-            app:layout_constraintBottom_toTopOf="@+id/spinner3"
+            app:layout_constraintBottom_toTopOf="@+id/cityDeleteDropdown"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent" />
 
