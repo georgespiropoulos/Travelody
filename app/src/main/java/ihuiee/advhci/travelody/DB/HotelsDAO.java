@@ -32,4 +32,7 @@ public interface HotelsDAO {
 
     @Query("SELECT * FROM hotels WHERE hotel_name = :hotelName AND hotel_city_id = :city_id AND hotel_country_id = :country_id ")
     Hotels getHotel(String hotelName, int city_id, int country_id);
+
+    @Query("SELECT * FROM hotels WHERE hotel_id = :id ")
+    Hotels getHotelById(int id);
 }
