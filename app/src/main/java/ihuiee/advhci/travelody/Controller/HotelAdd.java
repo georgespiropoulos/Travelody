@@ -62,10 +62,10 @@ public class HotelAdd extends Fragment {
         cityAdapter.setDropDownViewResource(androidx.appcompat.R.layout.support_simple_spinner_dropdown_item);
         city.setAdapter(cityAdapter);
 
-        countriesList.add(0,defaultSelection);
-        citiesList.add(0, defaultSelection);
 
         countriesList.addAll(db.countriesDao().getCountryNames());
+        countriesList.sort(String::compareToIgnoreCase);
+        countriesList.add(0,defaultSelection);
 
         countryAdapter.setDropDownViewResource(androidx.appcompat.R.layout.support_simple_spinner_dropdown_item);
         country.setAdapter(countryAdapter);
@@ -75,21 +75,10 @@ public class HotelAdd extends Fragment {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 selectedCountry = parent.getItemAtPosition(position).toString();
-                ArrayList<String> tempList = new ArrayList<>();
-                tempList.addAll(db.citiesDao().getCitiesOfCountry(db.countriesDao().getCountryIdByName(selectedCountry)));
-                for (int i=1; i < tempList.size()+1; i++) {
-                    try {
-                        citiesList.set(i, tempList.get(i - 1));
-                    }catch (Exception e){
-                        citiesList.add(i, tempList.get(i - 1));
-                    }
-                }
-                if (tempList.size()+1 < citiesList.size()){
-                    for (int j = tempList.size()+1; j < citiesList.size(); j++){
-                        citiesList.remove(j);
-                    }
-                }
-                tempList.clear();
+                citiesList.clear();
+                citiesList.addAll(db.citiesDao().getCitiesOfCountry(db.countriesDao().getCountryIdByName(selectedCountry)));
+                citiesList.sort(String::compareToIgnoreCase);
+                citiesList.add(0, defaultSelection);
                 cityAdapter.clear();
                 cityAdapter.addAll(citiesList);
                 cityAdapter.notifyDataSetChanged();

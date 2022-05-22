@@ -26,4 +26,7 @@ public interface HotelsDAO {
 
     @Query("SELECT hotel_name FROM hotels WHERE hotel_city_id = :cityID ")
     List<String> getHotelsOfCity(int cityID);
+
+    @Query("SELECT hotel_id FROM hotels WHERE hotel_name = :name ")
+    int getHotelIdByHotelName(String name);
 }

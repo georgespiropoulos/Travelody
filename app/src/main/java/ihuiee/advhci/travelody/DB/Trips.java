@@ -6,6 +6,8 @@ import androidx.room.Entity;
 import androidx.room.ForeignKey;
 import androidx.room.PrimaryKey;
 
+import java.io.Serializable;
+
 @Entity (tableName = "trips",
         foreignKeys = {
         @ForeignKey(entity = TravelAgencies.class,
@@ -34,7 +36,7 @@ import androidx.room.PrimaryKey;
                 onUpdate = ForeignKey.CASCADE,
                 onDelete = ForeignKey.CASCADE)
         })
-public class Trips {
+public class Trips implements Serializable {
     @PrimaryKey(autoGenerate = true)
     @ColumnInfo(name = "trip_id") @NonNull
     public int idOfTrip;

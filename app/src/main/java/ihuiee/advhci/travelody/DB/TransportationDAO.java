@@ -23,4 +23,7 @@ public interface TransportationDAO {
 
     @Query("SELECT transport_name FROM transportation")
     List<String> getTransportationNames();
+
+    @Query("SELECT transport_id FROM transportation WHERE transport_name = :name")
+    int getTransportationIdByName(String name);
 }
