@@ -21,5 +21,8 @@ public interface TripsDAO {
     @Query("SELECT * FROM trips")
     List<Trips> getTrips();
 
+    @Query("SELECT * FROM trips WHERE trip_id = :id")
+    Trips getTripById(int id);
+
 
 }

@@ -111,6 +111,10 @@ public class HotelAdd extends Fragment {
                 hotel.setCountryIdOfHotel(db.countriesDao().getCountryIdByName(selectedCountry));
                 hotel.setCityIdOfHotel(db.citiesDao().getCitiesIdByName(selectedCity));
                 db.hotelsDao().insertHotel(hotel);
+                hotelName.setText("");
+                hotelAddress.setText("");
+                country.setSelection(0);
+                city.setSelection(0);
                 Toast.makeText(requireActivity().getApplicationContext(),"Hotel Added",Toast.LENGTH_LONG).show();
 
             }else

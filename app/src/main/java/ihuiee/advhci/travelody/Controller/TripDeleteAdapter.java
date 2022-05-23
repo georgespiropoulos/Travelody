@@ -2,12 +2,16 @@ package ihuiee.advhci.travelody.Controller;
 
 
 import android.content.Context;
+import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
@@ -28,10 +32,12 @@ public class TripDeleteAdapter extends RecyclerView.Adapter<TripDeleteAdapter.Vi
     ArrayList<String> duration= new ArrayList<>();
     ArrayList<String> date= new ArrayList<>();
     ArrayList<String> price= new ArrayList<>();
+    int rowIndex = -1;
+    int idToDelete = -1;
 
     public TripDeleteAdapter(){}
-    public TripDeleteAdapter(Context ct, ArrayList<String> city, ArrayList<String> country, ArrayList<String> hotel, ArrayList<String> travelAgency, ArrayList<String> transport,
-                             ArrayList<String> duration, ArrayList<String> date, ArrayList<String> price, ArrayList<String> id){
+    public TripDeleteAdapter(Context ct, ArrayList<String> id, ArrayList<String> city, ArrayList<String> country, ArrayList<String> hotel, ArrayList<String> transport,
+                             ArrayList<String> travelAgency, ArrayList<String> date, ArrayList<String> duration, ArrayList<String> price){
         context = ct;
         this.id = id;
         this.city = city;
@@ -55,16 +61,30 @@ public class TripDeleteAdapter extends RecyclerView.Adapter<TripDeleteAdapter.Vi
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
+        holder.idText.setText(id.get(position));
+        holder.cityText.setText(city.get(position));
+        holder.countryText.setText(country.get(position));
+        holder.transportText.setText(transport.get(position));
+        holder.dateText.setText(date.get(position));
+        holder.durationText.setText(duration.get(position) + " DAYS");
+        holder.hotelText.setText(hotel.get(position));
+        holder.priceText.setText(price.get(position));
+        holder.travelAgencyText.setText(travelAgency.get(position));
+        holder.euroSymbol.setImageResource(R.drawable.baseline_euro_black_48);
 
-        holder.id.setText(id.get(position));
-        holder.city.setText(city.get(position));
-        holder.country.setText(country.get(position));
-//        holder.transport.setText(transport.get(position));
-        holder.date.setText(date.get(position));
-        holder.duration.setText(duration.get(position) + "DAYS");
-        holder.hotel.setText(hotel.get(position));
-        holder.price.setText(price.get(position));
-        holder.travelAgency.setText(travelAgency.get(position));
+        holder.card.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                rowIndex = holder.getAdapterPosition();
+                idToDelete = Integer.parseInt(id.get(rowIndex));
+                notifyDataSetChanged();
+            }
+        });
+        if (rowIndex == position){
+            holder.card.setCardBackgroundColor(Color.parseColor("#C6B497"));
+        }else{
+            holder.card.setCardBackgroundColor(Color.parseColor("#FFFFFF"));
+        }
     }
 
     @Override
@@ -74,20 +94,30 @@ public class TripDeleteAdapter extends RecyclerView.Adapter<TripDeleteAdapter.Vi
 
     public class ViewHolder extends RecyclerView.ViewHolder{
 
-        TextView id, city, country, transport, date, duration, hotel, price, travelAgency;
+        CardView card;
+        RecyclerView rView;
+        TextView idText, cityText, countryText, transportText, dateText, durationText, hotelText, priceText, travelAgencyText;
+        ImageView euroSymbol;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
-            id = itemView.findViewById(R.id.TripDeleteTripIDText);
-            city = itemView.findViewById(R.id.tripDeleteCityName);
-            country = itemView.findViewById(R.id.tripDeleteCountryName);
-            transport = itemView.findViewById(R.id.tripDeleteTransportName);
-            date = itemView.findViewById(R.id.tripDeleteDate);
-            duration = itemView.findViewById(R.id.tripDeleteDuration);
-            hotel = itemView.findViewById(R.id.tripDeleteHotel);
-            price = itemView.findViewById(R.id.tripDeletePrice);
-            travelAgency = itemView.findViewById(R.id.tripDeleteTravelAgencyName);
+            idText = itemView.findViewById(R.id.TripDeleteTripIDText);
+            cityText = itemView.findViewById(R.id.tripDeleteCityName);
+            countryText = itemView.findViewById(R.id.tripDeleteCountryName);
+            transportText = itemView.findViewById(R.id.tripDeleteTransportName);
+            dateText = itemView.findViewById(R.id.tripDeleteDate);
+            durationText = itemView.findViewById(R.id.tripDeleteDuration);
+            hotelText = itemView.findViewById(R.id.tripDeleteHotel);
+            priceText = itemView.findViewById(R.id.tripDeletePrice);
+            travelAgencyText = itemView.findViewById(R.id.tripDeleteTravelAgencyName);
+            euroSymbol = itemView.findViewById(R.id.euroSymbol);
+            card = itemView.findViewById(R.id.tripDeleteCard);
+            rView = itemView.findViewById(R.id.TripDeleteRecyclerView);
 
         }
+    }
+
+    public int tripToDelete(){
+        return idToDelete;
     }
 }

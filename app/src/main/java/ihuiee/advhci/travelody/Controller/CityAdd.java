@@ -84,9 +84,11 @@ public class CityAdd extends Fragment {
                         city.setIdOfCountry(db.countriesDao().getCountryIdByName(selectedCountry));
                         db.citiesDao().insertCity(city);
                         cityName.setText("");
+                        country.setSelection(0);
                         Toast.makeText(getActivity().getApplicationContext(), "City added", Toast.LENGTH_LONG).show();
                     }catch (Exception e){
                         cityName.setText("");
+                        country.setSelection(0);
                         Toast.makeText(getActivity().getApplicationContext(), "City already added", Toast.LENGTH_LONG).show();
                     }
 
