@@ -85,7 +85,7 @@ public class TripDelete extends Fragment {
                 int id = deleteAdapter.tripToDelete();
                 try{
                     db.tripsDao().deleteTrip(db.tripsDao().getTripById(id));
-                    Toast.makeText(getActivity().getApplicationContext(), "Trip Deleted", Toast.LENGTH_LONG).show();
+                    Toast.makeText(getActivity().getApplicationContext(), "Trip deleted", Toast.LENGTH_LONG).show();
                 }catch (Exception e) {
                     Toast.makeText(getActivity().getApplicationContext(), "Error", Toast.LENGTH_LONG).show();
                 }

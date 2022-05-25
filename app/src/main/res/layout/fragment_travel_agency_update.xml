@@ -26,20 +26,20 @@
             android:id="@+id/TravelAgencyUpdateNameText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Name"
+            android:text="New Name"
             app:layout_constraintBottom_toTopOf="@+id/TravelAgencyUpdateName"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.128"
+            app:layout_constraintHorizontal_bias="0.14"
             app:layout_constraintStart_toStartOf="parent" />
 
         <TextView
             android:id="@+id/TravelAgencyUpdateIDText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Travel Agency ID"
+            android:text="Travel Agency Name"
             app:layout_constraintBottom_toTopOf="@+id/TravelAgencyChoose"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.156"
+            app:layout_constraintHorizontal_bias="0.17"
             app:layout_constraintStart_toStartOf="parent" />
 
         <EditText

@@ -96,7 +96,7 @@ public class CountryDelete extends Fragment {
                     }
 
                 }else{
-                    Toast.makeText(getActivity().getApplicationContext(), "All fields are Required", Toast.LENGTH_LONG).show();
+                    Toast.makeText(getActivity().getApplicationContext(), "All fields are required", Toast.LENGTH_LONG).show();
                 }
             }
         });

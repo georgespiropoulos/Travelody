@@ -150,7 +150,7 @@ public class HotelUpdate extends Fragment {
                 hotelAddress.setText("");
                 country.setSelection(0);
                 city.setSelection(0);
-                Toast.makeText(requireActivity().getApplicationContext(),"Hotel Updated",Toast.LENGTH_LONG).show();
+                Toast.makeText(requireActivity().getApplicationContext(),"Hotel updated",Toast.LENGTH_LONG).show();
 
             }else
                 Toast.makeText(requireActivity().getApplicationContext(),"Required fields(*) cannot be empty",Toast.LENGTH_LONG).show();

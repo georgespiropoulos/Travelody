@@ -107,7 +107,7 @@ public class CityUpdate extends Fragment {
                 }else city1.setIdOfCountry(db.countriesDao().getCountryIdByName(selectedCountry));
                 try {
                     db.citiesDao().updateCity(city1);
-                    Toast.makeText(requireActivity().getApplicationContext(),"City Updated",Toast.LENGTH_LONG).show();
+                    Toast.makeText(requireActivity().getApplicationContext(),"City updated",Toast.LENGTH_LONG).show();
                 }catch (Exception e){
                     Toast.makeText(requireActivity().getApplicationContext(),"City already exists",Toast.LENGTH_LONG).show();
                 }

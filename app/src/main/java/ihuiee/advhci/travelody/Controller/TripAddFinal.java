@@ -99,7 +99,7 @@ public class TripAddFinal extends Fragment {
                 }catch (Exception e){
                     Toast.makeText(requireActivity().getApplicationContext(),"Error couldn't submit form",Toast.LENGTH_LONG).show();
                 }
-                Toast.makeText(requireActivity().getApplicationContext(),"Trip Added",Toast.LENGTH_LONG).show();
+                Toast.makeText(requireActivity().getApplicationContext(),"Trip added",Toast.LENGTH_LONG).show();
                 fragmentManager.beginTransaction().replace(R.id.fragment_container, new TripAdd()).commit();
 
             }else

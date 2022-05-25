@@ -94,15 +94,15 @@ public class CountryUpdate extends Fragment {
                         countryAdapter.addAll(countriesList);
                         countryAdapter.notifyDataSetChanged();
                         country.setSelection(0);
-                        Toast.makeText(getActivity().getApplicationContext(), "Country Updated", Toast.LENGTH_LONG).show();
+                        Toast.makeText(getActivity().getApplicationContext(), "Country updated", Toast.LENGTH_LONG).show();
                     }catch (Exception e){
                         countryName.setText("");
                         country.setSelection(0);
-                        Toast.makeText(getActivity().getApplicationContext(), "Country already Exists", Toast.LENGTH_LONG).show();
+                        Toast.makeText(getActivity().getApplicationContext(), "Country already exists", Toast.LENGTH_LONG).show();
                     }
 
                 }else{
-                    Toast.makeText(getActivity().getApplicationContext(), "All fields are Required", Toast.LENGTH_LONG).show();
+                    Toast.makeText(getActivity().getApplicationContext(), "All fields are required", Toast.LENGTH_LONG).show();
                 }
             }
         });

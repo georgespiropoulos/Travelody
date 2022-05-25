@@ -87,13 +87,13 @@ public class TravelAgencyDelete extends Fragment {
                         travelAgencyAdapter.notifyDataSetChanged();
                         travelAgency.setSelection(0);
 
-                        Toast.makeText(getActivity().getApplicationContext(), "TravelAgency deleted", Toast.LENGTH_LONG).show();
+                        Toast.makeText(getActivity().getApplicationContext(), "Travel Agency deleted", Toast.LENGTH_LONG).show();
                     }catch (Exception e){
-                        Toast.makeText(getActivity().getApplicationContext(), "Error"+e.toString(), Toast.LENGTH_LONG).show();
+                        Toast.makeText(getActivity().getApplicationContext(), "Error", Toast.LENGTH_LONG).show();
                     }
 
                 }else{
-                    Toast.makeText(getActivity().getApplicationContext(), "All fields are Required", Toast.LENGTH_LONG).show();
+                    Toast.makeText(getActivity().getApplicationContext(), "All fields are required", Toast.LENGTH_LONG).show();
                 }
             }
         });

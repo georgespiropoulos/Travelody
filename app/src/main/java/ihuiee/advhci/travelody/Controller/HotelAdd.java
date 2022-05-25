@@ -115,10 +115,10 @@ public class HotelAdd extends Fragment {
                 hotelAddress.setText("");
                 country.setSelection(0);
                 city.setSelection(0);
-                Toast.makeText(requireActivity().getApplicationContext(),"Hotel Added",Toast.LENGTH_LONG).show();
+                Toast.makeText(requireActivity().getApplicationContext(),"Hotel added",Toast.LENGTH_LONG).show();
 
             }else
-                Toast.makeText(requireActivity().getApplicationContext(),"All fields are Required",Toast.LENGTH_LONG).show();
+                Toast.makeText(requireActivity().getApplicationContext(),"All fields are required",Toast.LENGTH_LONG).show();
         });
     }
 }

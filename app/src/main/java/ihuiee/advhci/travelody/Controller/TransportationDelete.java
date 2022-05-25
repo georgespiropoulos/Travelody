@@ -90,11 +90,11 @@ public class TransportationDelete extends Fragment {
 
                         Toast.makeText(getActivity().getApplicationContext(), "Transportation deleted", Toast.LENGTH_LONG).show();
                     }catch (Exception e){
-                        Toast.makeText(getActivity().getApplicationContext(), "Error"+e.toString(), Toast.LENGTH_LONG).show();
+                        Toast.makeText(getActivity().getApplicationContext(), "Error", Toast.LENGTH_LONG).show();
                     }
 
                 }else{
-                    Toast.makeText(getActivity().getApplicationContext(), "All fields are Required", Toast.LENGTH_LONG).show();
+                    Toast.makeText(getActivity().getApplicationContext(), "All fields are required", Toast.LENGTH_LONG).show();
                 }
             }
         });

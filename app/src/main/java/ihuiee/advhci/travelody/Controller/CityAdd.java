@@ -89,11 +89,11 @@ public class CityAdd extends Fragment {
                     }catch (Exception e){
                         cityName.setText("");
                         country.setSelection(0);
-                        Toast.makeText(getActivity().getApplicationContext(), "City already added", Toast.LENGTH_LONG).show();
+                        Toast.makeText(getActivity().getApplicationContext(), "City already exists", Toast.LENGTH_LONG).show();
                     }
 
                 }else{
-                    Toast.makeText(getActivity().getApplicationContext(), "All fields are Required", Toast.LENGTH_LONG).show();
+                    Toast.makeText(getActivity().getApplicationContext(), "All fields are required", Toast.LENGTH_LONG).show();
                 }
             }
         });
