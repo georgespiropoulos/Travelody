@@ -122,7 +122,7 @@ public class CityUpdate extends Fragment {
 
 
             }else
-                Toast.makeText(requireActivity().getApplicationContext(),"Required Fields cannot be empty",Toast.LENGTH_LONG).show();
+                Toast.makeText(requireActivity().getApplicationContext(),"Required fields(*) cannot be empty",Toast.LENGTH_LONG).show();
         });
     }
 }

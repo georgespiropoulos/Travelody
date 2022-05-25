@@ -8,6 +8,7 @@ import androidx.room.Index;
 import androidx.room.PrimaryKey;
 
 @Entity (tableName = "hotels",
+        indices = {@Index(value = {"hotel_name"}, unique = true)},
         foreignKeys = {
         @ForeignKey(entity = Countries.class,
                 parentColumns = "country_id",
