@@ -26,19 +26,19 @@
             android:id="@+id/CountryDelete"
             android:layout_width="314dp"
             android:layout_height="48dp"
-            android:layout_marginTop="56dp"
+            android:layout_marginBottom="34dp"
             android:background="@color/brown"
             android:text="Delete"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.515"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/ChooseCityHotelUpdate"
             tools:ignore="TextContrastCheck" />
 
         <Spinner
-            android:id="@+id/ChooseCityHotelUpdate"
+            android:id="@+id/CountryDeleteDropdown"
             android:layout_width="314dp"
-            android:layout_height="48dp"
+            android:layout_height="52dp"
             android:layout_marginTop="56dp"
             android:background="@android:drawable/btn_dropdown"
             android:spinnerMode="dropdown"
@@ -50,12 +50,12 @@
 
         <TextView
             android:id="@+id/CountryDeleteIDTitle"
-            android:layout_width="72dp"
+            android:layout_width="wrap_content"
             android:layout_height="22dp"
-            android:text="Country ID"
-            app:layout_constraintBottom_toTopOf="@+id/ChooseCityHotelUpdate"
+            android:text="Choose Country"
+            app:layout_constraintBottom_toTopOf="@+id/CountryDeleteDropdown"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.147"
+            app:layout_constraintHorizontal_bias="0.16"
             app:layout_constraintStart_toStartOf="parent" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </FrameLayout>

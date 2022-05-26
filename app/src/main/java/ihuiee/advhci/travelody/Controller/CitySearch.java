@@ -2,65 +2,94 @@ package ihuiee.advhci.travelody.Controller;
 
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.room.Room;
 
+import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.Spinner;
+import android.widget.Toast;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import ihuiee.advhci.travelody.DB.AppDatabase;
+import ihuiee.advhci.travelody.DB.Cities;
 import ihuiee.advhci.travelody.R;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link CitySearch#newInstance} factory method to
- * create an instance of this fragment.
- */
 public class CitySearch extends Fragment {
 
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
-
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
-
-    public CitySearch() {
-        // Required empty public constructor
-    }
-
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment CitySearch.
-     */
-    // TODO: Rename and change types and number of parameters
-    public static CitySearch newInstance(String param1, String param2) {
-        CitySearch fragment = new CitySearch();
-        Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
-        fragment.setArguments(args);
-        return fragment;
-    }
-
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
-        }
-    }
+    Button nextButton;
+    String selectedCountry;
+    List<String> countriesList = new ArrayList<>();
+    String defaultSelection = "CHOOSE";
+    FragmentManager fragmentManager = getFragmentManager();
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_city_search, container, false);
+    }
+
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+
+        AppDatabase db = Room.databaseBuilder(requireContext(), AppDatabase.class, "TravelodyDB").allowMainThreadQueries().build();
+
+        fragmentManager = getParentFragmentManager();
+        nextButton = (Button) view.findViewById(R.id.CitySearchButton);
+        Spinner country=view.findViewById(R.id.CitySearchChooseCountry);
+        ArrayAdapter countryAdapter = new ArrayAdapter<String>(getContext(), androidx.appcompat.R.layout.support_simple_spinner_dropdown_item, new ArrayList<>());
+
+
+        countriesList.addAll(db.countriesDao().getCountryNames());
+        countriesList.sort(String::compareToIgnoreCase);
+        countriesList.add(0,defaultSelection);
+
+        countryAdapter.setDropDownViewResource(androidx.appcompat.R.layout.support_simple_spinner_dropdown_item);
+        country.setAdapter(countryAdapter);
+        countryAdapter.addAll(countriesList);
+        countryAdapter.notifyDataSetChanged();
+        country.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                selectedCountry = parent.getItemAtPosition(position).toString();
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {}
+        });
+
+        nextButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(!selectedCountry.equals(defaultSelection)){
+                    ArrayList<Cities> cities = (ArrayList<Cities>) db.citiesDao().getCitiesOfACountry(db.countriesDao().getCountryIdByName(selectedCountry));
+                    try {
+                        Bundle bundle = new Bundle();
+                        bundle.putSerializable("cities", cities);
+                        CityResults results = new CityResults();
+                        results.setArguments(bundle);
+                        fragmentManager.beginTransaction().replace(R.id.fragment_container, results).commit();
+                    }catch (Exception e){
+                        country.setSelection(0);
+                    }
+
+                }else{
+                    Toast.makeText(getActivity().getApplicationContext(), "Choose a Country", Toast.LENGTH_LONG).show();
+                }
+            }
+        });
     }
 }

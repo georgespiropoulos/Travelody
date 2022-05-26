@@ -42,20 +42,20 @@
             android:text="Trip ID"
             app:layout_constraintBottom_toTopOf="@+id/TripID"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.128"
+            app:layout_constraintHorizontal_bias="0.129"
             app:layout_constraintStart_toStartOf="parent" />
 
         <Button
             android:id="@+id/Next"
             android:layout_width="314dp"
             android:layout_height="48dp"
-            android:layout_marginTop="56dp"
+            android:layout_marginBottom="34dp"
             android:background="@color/brown"
             android:text="Next"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.494"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/TripID"
             tools:ignore="TextContrastCheck" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </FrameLayout>
