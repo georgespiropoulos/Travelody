@@ -29,7 +29,7 @@ public class CountryResults extends Fragment {
     ArrayList<String> ids = new ArrayList<>();
     ArrayList<String> names = new ArrayList<>();
     RecyclerView recyclerView;
-    FragmentManager fragmentManager = getFragmentManager();
+
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -45,7 +45,6 @@ public class CountryResults extends Fragment {
         AppDatabase db = Room.databaseBuilder(requireContext(), AppDatabase.class, "TravelodyDB").allowMainThreadQueries().build();
 
         recyclerView = (RecyclerView) view.findViewById(R.id.resultsUniversalRView);
-        fragmentManager = getParentFragmentManager();
         countries=db.countriesDao().getCountries();
 
         for (int i=0; i < countries.size(); i++){

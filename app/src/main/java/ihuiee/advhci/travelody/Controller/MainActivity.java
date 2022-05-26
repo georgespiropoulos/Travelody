@@ -175,6 +175,11 @@ public class MainActivity extends AppCompatActivity {
                     drawerLayout.closeDrawers();
                     return true;
                 }
+                case R.id.seeTransactions: {
+                    fragmentManager.beginTransaction().replace(R.id.fragment_container, new Transactions()).commit();
+                    drawerLayout.closeDrawers();
+                    return true;
+                }
                 case R.id.exit: {
                     drawerLayout.closeDrawers();
                     finish();
