@@ -4,54 +4,58 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Controller.Transactions">
+    tools:context=".Controller.TripDelete">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
         <TextView
-            android:id="@+id/TransactionsTitle"
+            android:id="@+id/DeleteText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="56dp"
-            android:text="Transactions"
+            android:layout_marginTop="24dp"
+            android:text="Delete"
             android:textSize="30dp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.498"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <Spinner
-            android:id="@+id/TransactionsChooseTrip"
+            android:id="@+id/TripDelete"
             android:layout_width="314dp"
             android:layout_height="48dp"
-            android:layout_marginTop="36dp"
+            android:layout_marginTop="24dp"
             android:background="@android:drawable/btn_dropdown"
+            android:spinnerMode="dropdown"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.494"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/TransactionsTitle"
+            app:layout_constraintTop_toBottomOf="@+id/DeleteText"
             tools:ignore="SpeakableTextPresentCheck" />
 
         <TextView
-            android:id="@+id/TransactionsChooseTripText"
+            android:id="@+id/TripIDDelete"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Choose Trip"
-            app:layout_constraintBottom_toTopOf="@+id/TransactionsChooseTrip"
+            android:text="Trip ID"
+            app:layout_constraintBottom_toTopOf="@+id/TripDelete"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.145"
+            app:layout_constraintHorizontal_bias="0.283"
             app:layout_constraintStart_toStartOf="parent" />
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/transactionsRecyclerView"
-            android:layout_width="380dp"
-            android:layout_height="457dp"
-            android:layout_marginTop="24dp"
+        <Button
+            android:id="@+id/DeleteTripButton"
+            android:layout_width="314dp"
+            android:layout_height="48dp"
+            android:layout_marginBottom="40dp"
+            android:background="@color/brown"
+            android:text="Delete"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.493"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/TransactionsChooseTrip" />
+            tools:ignore="TextContrastCheck" />
     </androidx.constraintlayout.widget.ConstraintLayout>
+
 </FrameLayout>
