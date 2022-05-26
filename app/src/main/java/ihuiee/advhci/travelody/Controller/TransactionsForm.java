@@ -2,65 +2,92 @@ package ihuiee.advhci.travelody.Controller;
 
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
 
+import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
+import android.widget.Toast;
+
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.firestore.CollectionReference;
+import com.google.firebase.firestore.FirebaseFirestore;
+
+import java.util.HashMap;
+import java.util.Objects;
 
 import ihuiee.advhci.travelody.R;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link TransactionsForm#newInstance} factory method to
- * create an instance of this fragment.
- */
 public class TransactionsForm extends Fragment {
 
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
+    int tripId;
+    EditText name;
+    EditText surname;
+    Button completeTransaction;
+    RadioButton selectedPayment;
+    RadioGroup paymentGroup;
+    FirebaseFirestore fb;
+    FragmentManager fragmentManager = getFragmentManager();
+    boolean success = false;
 
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
-
-    public TransactionsForm() {
-        // Required empty public constructor
-    }
-
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment fragment_Form.
-     */
-    // TODO: Rename and change types and number of parameters
-    public static TransactionsForm newInstance(String param1, String param2) {
-        TransactionsForm fragment = new TransactionsForm();
-        Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
-        fragment.setArguments(args);
-        return fragment;
-    }
-
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
-        }
-    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment__form, container, false);
+        return inflater.inflate(R.layout.fragment_form, container, false);
+    }
+
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+
+        fb = FirebaseFirestore.getInstance();
+
+        try {
+            tripId = getArguments().getInt("trip_id");
+        }catch (Exception e){
+            Toast.makeText(requireActivity().getApplicationContext(),"Something went wrong",Toast.LENGTH_LONG).show();
+        }
+
+        fragmentManager = getParentFragmentManager();
+        name = view.findViewById(R.id.FormName);
+        surname = view.findViewById(R.id.Surname);
+        completeTransaction = view.findViewById(R.id.FormCompleteButton);
+        paymentGroup = view.findViewById(R.id.PaymentMethodGroup);
+
+        completeTransaction.setOnClickListener(view1 -> {
+            selectedPayment = view.findViewById(paymentGroup.getCheckedRadioButtonId());
+            if (!TextUtils.isEmpty(name.getText().toString()) && !TextUtils.isEmpty(surname.getText().toString()) && selectedPayment!=null){
+                CollectionReference dbTransactions = fb.collection("Transactions/Trips/"+tripId);
+
+                HashMap<String, String> transaction = new HashMap<>();
+                transaction.put("Όνομα", name.getText().toString());
+                transaction.put("Επώνυμο", surname.getText().toString());
+                transaction.put("Τρόπος Πληρωμής", selectedPayment.getText().toString());
+
+                try {
+                    dbTransactions.document(surname.getText().toString()).set(transaction).addOnSuccessListener(new OnSuccessListener<Void>() {
+                        @Override
+                        public void onSuccess(Void unused) {
+                        }
+                    });
+                    Toast.makeText(getActivity().getApplicationContext(), "Transaction Completed", Toast.LENGTH_LONG).show();
+                    fragmentManager.beginTransaction().replace(R.id.fragment_container, new TripSearch()).commit();
+                }catch (Exception e){
+                    Toast.makeText(getActivity().getApplicationContext(), "Transaction Failed", Toast.LENGTH_LONG).show();
+                }
+            }else Toast.makeText(getActivity().getApplicationContext(), "All fields are required", Toast.LENGTH_LONG).show();
+
+        });
     }
 }
