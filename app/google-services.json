@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "555389282327",
+    "project_id": "travelody-c19ce",
+    "storage_bucket": "travelody-c19ce.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:555389282327:android:261aeab99828f054e3d452",
+        "android_client_info": {
+          "package_name": "ihuiee.advhci.travelody"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "555389282327-kln9q5a8kgs6c48h7c1js3431d8ltp2u.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBnT2cnDR5Qwxq6WovqLR2D7WkQKXK4-Lo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "555389282327-kln9q5a8kgs6c48h7c1js3431d8ltp2u.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
