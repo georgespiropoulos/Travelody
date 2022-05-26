@@ -51,10 +51,10 @@ public class TravelAgencyAdd extends Fragment {
                     travelAgency.setNameOfTravelAgency(travelAgencyName.getText().toString());
                     db.travelAgenciesDao().insertTravelAgency(travelAgency);
                     travelAgencyName.setText("");
-                    Toast.makeText(requireActivity().getApplicationContext(), "Travel Agency Added", Toast.LENGTH_LONG).show();
+                    Toast.makeText(requireActivity().getApplicationContext(), "Travel Agency added", Toast.LENGTH_LONG).show();
                 } catch (Exception e) {
                     travelAgencyName.setText("");
-                    Toast.makeText(requireActivity().getApplicationContext(), "Travel Agency Already Exist", Toast.LENGTH_LONG).show();
+                    Toast.makeText(requireActivity().getApplicationContext(), "Travel Agency already exists", Toast.LENGTH_LONG).show();
                 }
             }else{
                 Toast.makeText(requireActivity().getApplicationContext(), "Empty field", Toast.LENGTH_LONG).show();

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Controller.Form">
+    tools:context=".Controller.TransactionsForm">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -83,13 +83,13 @@
             android:id="@+id/FormCompleteButton"
             android:layout_width="314dp"
             android:layout_height="48dp"
-            android:layout_marginTop="56dp"
+            android:layout_marginBottom="34dp"
             android:background="@color/brown"
             android:text="Complete"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.494"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/PaymentMethodGroup"
             tools:ignore="TextContrastCheck" />
 
         <TextView

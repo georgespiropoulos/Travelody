@@ -14,10 +14,10 @@
             android:id="@+id/TransportationUpdateIDText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Transportation ID"
+            android:text="Transportation Name"
             app:layout_constraintBottom_toTopOf="@+id/TransportationUpdateChoose"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.158"
+            app:layout_constraintHorizontal_bias="0.172"
             app:layout_constraintStart_toStartOf="parent" />
 
         <TextView
@@ -36,13 +36,13 @@
             android:id="@+id/TransportationUpdateButton"
             android:layout_width="314dp"
             android:layout_height="48dp"
-            android:layout_marginTop="56dp"
+            android:layout_marginBottom="34dp"
             android:background="@color/brown"
             android:text="Update"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.494"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/TransportationUpdateName"
             tools:ignore="TextContrastCheck" />
 
         <Spinner
@@ -62,10 +62,10 @@
             android:id="@+id/TransportationUpdateNameText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Name"
+            android:text="New Name"
             app:layout_constraintBottom_toTopOf="@+id/TransportationUpdateName"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.131"
+            app:layout_constraintHorizontal_bias="0.14"
             app:layout_constraintStart_toStartOf="parent" />
 
         <EditText

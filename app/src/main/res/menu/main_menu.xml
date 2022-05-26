@@ -102,6 +102,15 @@
                 android:icon="@mipmap/baseline_luggage_black_48"></item>
         </menu>
     </item>
+    <item android:id="@+id/transactionsMenu"
+        android:title="Transactions">
+        <menu>
+            <item android:id="@+id/seeTransactions"
+                android:title="Booked Trips"
+                android:icon="@mipmap/outline_paid_black_48">
+            </item>
+        </menu>
+    </item>
     <item android:id="@+id/exitMenu"
         android:title="Exit App">
         <menu>

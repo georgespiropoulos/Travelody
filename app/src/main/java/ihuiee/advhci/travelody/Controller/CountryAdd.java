@@ -51,10 +51,10 @@ public class CountryAdd extends Fragment {
                     country.setNameOfCountry(countryName.getText().toString());
                     db.countriesDao().insertCountry(country);
                 countryName.setText("");
-                    Toast.makeText(requireActivity().getApplicationContext(), "Country Added", Toast.LENGTH_LONG).show();
+                    Toast.makeText(requireActivity().getApplicationContext(), "Country added", Toast.LENGTH_LONG).show();
                 } catch (Exception e) {
                 countryName.setText("");
-                    Toast.makeText(requireActivity().getApplicationContext(), "Country Already Exist", Toast.LENGTH_LONG).show();
+                    Toast.makeText(requireActivity().getApplicationContext(), "Country already exists", Toast.LENGTH_LONG).show();
                 }
             }else{
                 Toast.makeText(requireActivity().getApplicationContext(), "Empty field", Toast.LENGTH_LONG).show();

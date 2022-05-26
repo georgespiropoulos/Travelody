@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Controller.TripUpdateChooseFinal">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <Spinner
+            android:id="@+id/transportUpdate"
+            android:layout_width="314dp"
+            android:layout_height="52dp"
+            android:layout_marginTop="56dp"
+            android:background="@android:drawable/btn_dropdown"
+            android:spinnerMode="dropdown"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.505"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/updateTrip2"
+            tools:ignore="SpeakableTextPresentCheck" />
+
+        <Spinner
+            android:id="@+id/durationUpdate"
+            android:layout_width="314dp"
+            android:layout_height="52dp"
+            android:layout_marginTop="56dp"
+            android:background="@android:drawable/btn_dropdown"
+            android:entries="@array/duration_array"
+            android:spinnerMode="dropdown"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.505"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/transportUpdate"
+            tools:ignore="SpeakableTextPresentCheck" />
+
+        <TextView
+            android:id="@+id/cityUpdateText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Duration Update"
+            app:layout_constraintBottom_toTopOf="@+id/durationUpdate"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.158"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <TextView
+            android:id="@+id/cityUpdateText2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Departure Date Update"
+            app:layout_constraintBottom_toTopOf="@+id/tripUpdateDate"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.182"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <TextView
+            android:id="@+id/countryUpdateText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Transport Update"
+            app:layout_constraintBottom_toTopOf="@+id/transportUpdate"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.162"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <TextView
+            android:id="@+id/countryUpdateText3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Price Update"
+            app:layout_constraintBottom_toTopOf="@+id/tripUpdatePrice"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.148"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <TextView
+            android:id="@+id/updateTrip2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="48dp"
+            android:text="Update Trip"
+            android:textSize="30dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/tripUpdateDate"
+            android:layout_width="314dp"
+            android:layout_height="52dp"
+            android:layout_marginTop="56dp"
+            android:ems="10"
+            android:hint="01/01/2022"
+            android:inputType="date"
+            android:focusableInTouchMode="false"
+            android:textAlignment="center"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/durationUpdate" />
+
+        <EditText
+            android:id="@+id/tripUpdatePrice"
+            android:layout_width="314dp"
+            android:layout_height="52dp"
+            android:layout_marginTop="56dp"
+            android:ems="10"
+            android:hint="Price"
+            android:inputType="numberDecimal"
+            android:textAlignment="center"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tripUpdateDate" />
+
+        <Button
+            android:id="@+id/tripUpdateButton"
+            android:layout_width="314dp"
+            android:layout_height="48dp"
+            android:layout_marginBottom="34dp"
+            android:text="UPDATE"
+            android:background="@color/brown"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.505"
+            app:layout_constraintStart_toStartOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</FrameLayout>

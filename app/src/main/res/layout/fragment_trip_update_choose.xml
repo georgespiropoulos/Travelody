@@ -14,7 +14,7 @@
             android:id="@+id/updateTrip"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="48dp"
             android:text="Update Trip"
             android:textSize="30dp"
             app:layout_constraintEnd_toEndOf="parent"
@@ -25,33 +25,7 @@
             android:id="@+id/CountryUpdate"
             android:layout_width="314dp"
             android:layout_height="52dp"
-            android:layout_marginTop="24dp"
-            android:background="@android:drawable/btn_dropdown"
-            android:spinnerMode="dropdown"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.505"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/TravelAgencyUpdate"
-            tools:ignore="SpeakableTextPresentCheck" />
-
-        <Spinner
-            android:id="@+id/CityUpdate"
-            android:layout_width="314dp"
-            android:layout_height="48dp"
-            android:layout_marginTop="24dp"
-            android:background="@android:drawable/btn_dropdown"
-            android:spinnerMode="dropdown"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.505"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/CountryUpdate"
-            tools:ignore="SpeakableTextPresentCheck" />
-
-        <Spinner
-            android:id="@+id/TravelAgencyUpdate"
-            android:layout_width="314dp"
-            android:layout_height="48dp"
-            android:layout_marginTop="24dp"
+            android:layout_marginTop="56dp"
             android:background="@android:drawable/btn_dropdown"
             android:spinnerMode="dropdown"
             app:layout_constraintEnd_toEndOf="parent"
@@ -61,10 +35,23 @@
             tools:ignore="SpeakableTextPresentCheck" />
 
         <Spinner
+            android:id="@+id/CityUpdate"
+            android:layout_width="314dp"
+            android:layout_height="52dp"
+            android:layout_marginTop="56dp"
+            android:background="@android:drawable/btn_dropdown"
+            android:spinnerMode="dropdown"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.505"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/CountryUpdate"
+            tools:ignore="SpeakableTextPresentCheck" />
+
+        <Spinner
             android:id="@+id/HotelUpdate"
             android:layout_width="314dp"
-            android:layout_height="48dp"
-            android:layout_marginTop="24dp"
+            android:layout_height="52dp"
+            android:layout_marginTop="56dp"
             android:background="@android:drawable/btn_dropdown"
             android:spinnerMode="dropdown"
             app:layout_constraintEnd_toEndOf="parent"
@@ -72,30 +59,6 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/CityUpdate"
             tools:ignore="SpeakableTextPresentCheck" />
-
-        <Spinner
-            android:id="@+id/TripDelete"
-            android:layout_width="314dp"
-            android:layout_height="48dp"
-            android:layout_marginTop="24dp"
-            android:background="@android:drawable/btn_dropdown"
-            android:spinnerMode="dropdown"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.494"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/HotelUpdate"
-            tools:ignore="SpeakableTextPresentCheck" />
-
-        <TextView
-            android:id="@+id/TravelAgencyUpdateText"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="4dp"
-            android:text="Travel Agency Update"
-            app:layout_constraintBottom_toTopOf="@+id/TravelAgencyUpdate"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.178"
-            app:layout_constraintStart_toStartOf="parent" />
 
         <TextView
             android:id="@+id/CountryUpdateText"
@@ -127,77 +90,41 @@
             app:layout_constraintHorizontal_bias="0.148"
             app:layout_constraintStart_toStartOf="parent" />
 
-        <TextView
-            android:id="@+id/DepartureDateUpdateTitle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Departure Date Update"
-            app:layout_constraintBottom_toTopOf="@+id/DepartureDateUpdateText"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.179"
-            app:layout_constraintStart_toStartOf="parent" />
-
-        <TextView
-            android:id="@+id/PriceUpdateText"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Price Update"
-            app:layout_constraintBottom_toTopOf="@+id/PriceUpdateInput"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.148"
-            app:layout_constraintStart_toStartOf="parent" />
-
-        <TextView
-            android:id="@+id/DurationUpdateText"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Duration Update"
-            app:layout_constraintBottom_toTopOf="@+id/TripDelete"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.154"
-            app:layout_constraintStart_toStartOf="parent" />
-
-        <EditText
-            android:id="@+id/DepartureDateUpdateText"
-            android:layout_width="314dp"
-            android:layout_height="50dp"
-            android:layout_marginTop="24dp"
-            android:ems="10"
-            android:hint="01/01/2022"
-            android:inputType="date"
-            android:textAlignment="center"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.494"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/TripDelete"
-            tools:ignore="SpeakableTextPresentCheck" />
-
-        <EditText
-            android:id="@+id/PriceUpdateInput"
-            android:layout_width="312dp"
-            android:layout_height="57dp"
-            android:layout_marginTop="24dp"
-            android:ems="10"
-            android:hint="Price"
-            android:inputType="number"
-            android:textAlignment="center"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.494"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/DepartureDateUpdateText" />
-
         <Button
-            android:id="@+id/UpdateButton"
+            android:id="@+id/tripUpdateNextButton"
             android:layout_width="314dp"
             android:layout_height="48dp"
-            android:layout_marginTop="24dp"
+            android:layout_marginBottom="34dp"
             android:background="@color/brown"
-            android:text="Update"
+            android:text="NEXT"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.505"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/PriceUpdateInput"
             tools:ignore="TextContrastCheck" />
+
+        <Spinner
+            android:id="@+id/spinner"
+            android:layout_width="314dp"
+            android:layout_height="52dp"
+            android:layout_marginTop="56dp"
+            android:background="@android:drawable/btn_dropdown"
+            android:spinnerMode="dropdown"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/HotelUpdate"
+            tools:ignore="SpeakableTextPresentCheck" />
+
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="49dp"
+            android:layout_marginEnd="226dp"
+            android:text="Travel Agency Update"
+            app:layout_constraintBottom_toTopOf="@+id/spinner"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </FrameLayout>

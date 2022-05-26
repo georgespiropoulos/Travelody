@@ -26,30 +26,30 @@
             android:id="@+id/CityUpdateName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Name"
+            android:text="*New Name"
             app:layout_constraintBottom_toTopOf="@+id/CityUpdateNameTextPlain"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.128"
+            app:layout_constraintHorizontal_bias="0.142"
             app:layout_constraintStart_toStartOf="parent" />
 
         <TextView
             android:id="@+id/ChooseCountryCityUpdateText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Choose Country"
+            android:text="Choose New Country"
             app:layout_constraintBottom_toTopOf="@+id/ChooseCountryCityUpdate"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.154"
+            app:layout_constraintHorizontal_bias="0.172"
             app:layout_constraintStart_toStartOf="parent" />
 
         <TextView
             android:id="@+id/CityUpdateID"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="City ID"
+            android:text="*City Name"
             app:layout_constraintBottom_toTopOf="@+id/CityUpdateChoose"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.129"
+            app:layout_constraintHorizontal_bias="0.141"
             app:layout_constraintStart_toStartOf="parent" />
 
         <EditText
@@ -70,13 +70,13 @@
             android:id="@+id/CityUpdateButton"
             android:layout_width="314dp"
             android:layout_height="48dp"
-            android:layout_marginTop="56dp"
+            android:layout_marginBottom="34dp"
             android:background="@color/brown"
             android:text="Update"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.494"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/ChooseCountryCityUpdate"
             tools:ignore="TextContrastCheck" />
 
         <Spinner

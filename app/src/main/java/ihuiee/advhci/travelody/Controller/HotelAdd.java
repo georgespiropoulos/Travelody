@@ -29,7 +29,6 @@ public class HotelAdd extends Fragment {
 
     List<String> countriesList = new ArrayList<>();
     List<String> citiesList = new ArrayList<>();
-    List<String> hotelList = new ArrayList<>();
     String selectedCountry;
     String selectedCity;
     String defaultSelection = "CHOOSE";
@@ -112,10 +111,14 @@ public class HotelAdd extends Fragment {
                 hotel.setCountryIdOfHotel(db.countriesDao().getCountryIdByName(selectedCountry));
                 hotel.setCityIdOfHotel(db.citiesDao().getCitiesIdByName(selectedCity));
                 db.hotelsDao().insertHotel(hotel);
-                Toast.makeText(requireActivity().getApplicationContext(),"Hotel Added",Toast.LENGTH_LONG).show();
+                hotelName.setText("");
+                hotelAddress.setText("");
+                country.setSelection(0);
+                city.setSelection(0);
+                Toast.makeText(requireActivity().getApplicationContext(),"Hotel added",Toast.LENGTH_LONG).show();
 
             }else
-                Toast.makeText(requireActivity().getApplicationContext(),"All fields are Required",Toast.LENGTH_LONG).show();
+                Toast.makeText(requireActivity().getApplicationContext(),"All fields are required",Toast.LENGTH_LONG).show();
         });
     }
 }

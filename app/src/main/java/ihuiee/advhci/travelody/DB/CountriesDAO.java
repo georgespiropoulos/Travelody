@@ -5,6 +5,8 @@ import androidx.room.Delete;
 import androidx.room.Insert;
 import androidx.room.Query;
 import androidx.room.Update;
+
+import java.util.Collection;
 import java.util.List;
 
 @Dao
@@ -26,4 +28,10 @@ public interface CountriesDAO {
 
     @Query("SELECT country_id FROM countries WHERE country_name = :name")
     int getCountryIdByName(String name);
+
+    @Query("SELECT * FROM countries WHERE country_id = :id")
+    Countries getCountryById(int id);
+
+    @Query("SELECT country_id FROM countries")
+    List<Integer> getCountryIds();
 }

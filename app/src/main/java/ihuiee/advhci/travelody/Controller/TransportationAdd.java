@@ -52,10 +52,10 @@ public class TransportationAdd extends Fragment {
                     transportation.setNameOfTransport(transportationName.getText().toString());
                     db.transportationDao().insertTransportation(transportation);
                     transportationName.setText("");
-                    Toast.makeText(requireActivity().getApplicationContext(), "Transportation Added", Toast.LENGTH_LONG).show();
+                    Toast.makeText(requireActivity().getApplicationContext(), "Transportation added", Toast.LENGTH_LONG).show();
                 } catch (Exception e) {
                     transportationName.setText("");
-                    Toast.makeText(requireActivity().getApplicationContext(), "Transportation Already Exist", Toast.LENGTH_LONG).show();
+                    Toast.makeText(requireActivity().getApplicationContext(), "Transportation already exists", Toast.LENGTH_LONG).show();
                 }
             }else{
                 Toast.makeText(requireActivity().getApplicationContext(), "Empty field", Toast.LENGTH_LONG).show();

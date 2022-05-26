@@ -38,23 +38,23 @@
             android:id="@+id/TravelAgencyIDTitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Travel Agency ID"
+            android:text="Travel Agency Name"
             app:layout_constraintBottom_toTopOf="@+id/TravelAgencyDeleteChoose"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.156"
+            app:layout_constraintHorizontal_bias="0.17"
             app:layout_constraintStart_toStartOf="parent" />
 
         <Button
             android:id="@+id/TravelAgencyDeleteButton"
             android:layout_width="314dp"
             android:layout_height="48dp"
-            android:layout_marginTop="56dp"
+            android:layout_marginBottom="34dp"
             android:background="@color/brown"
             android:text="Delete"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.494"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/TravelAgencyDeleteChoose"
             tools:ignore="TextContrastCheck" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>

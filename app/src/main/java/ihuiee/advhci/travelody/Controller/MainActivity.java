@@ -7,10 +7,7 @@ import androidx.fragment.app.FragmentManager;
 import androidx.appcompat.widget.Toolbar;
 import androidx.room.Room;
 import android.os.Bundle;
-import android.view.Gravity;
-import android.view.View;
 import android.widget.ImageButton;
-import android.widget.TextView;
 
 
 import com.google.android.material.navigation.NavigationView;
@@ -89,32 +86,32 @@ public class MainActivity extends AppCompatActivity {
                     return true;
                 }
                 case R.id.citySearch: {
-                    fragmentManager.beginTransaction().replace(R.id.fragment_container, new Search()).commit();
+                    fragmentManager.beginTransaction().replace(R.id.fragment_container, new CitySearch()).commit();
                     drawerLayout.closeDrawers();
                     return true;
                 }
                 case R.id.countrySearch: {
-                    fragmentManager.beginTransaction().replace(R.id.fragment_container, new Search()).commit();
+                    fragmentManager.beginTransaction().replace(R.id.fragment_container, new CountryResults()).commit();
                     drawerLayout.closeDrawers();
                     return true;
                 }
                 case R.id.hotelSearch: {
-                    fragmentManager.beginTransaction().replace(R.id.fragment_container, new Search()).commit();
+                    fragmentManager.beginTransaction().replace(R.id.fragment_container, new HotelSearch()).commit();
                     drawerLayout.closeDrawers();
                     return true;
                 }
                 case R.id.transportationSearch: {
-                    fragmentManager.beginTransaction().replace(R.id.fragment_container, new Search()).commit();
+                    fragmentManager.beginTransaction().replace(R.id.fragment_container, new TransportationResults()).commit();
                     drawerLayout.closeDrawers();
                     return true;
                 }
                 case R.id.travelAgencySearch: {
-                    fragmentManager.beginTransaction().replace(R.id.fragment_container, new Search()).commit();
+                    fragmentManager.beginTransaction().replace(R.id.fragment_container, new TravelAgencyResults()).commit();
                     drawerLayout.closeDrawers();
                     return true;
                 }
                 case R.id.tripSearch: {
-                    fragmentManager.beginTransaction().replace(R.id.fragment_container, new Search()).commit();
+                    fragmentManager.beginTransaction().replace(R.id.fragment_container, new TripSearch()).commit();
                     drawerLayout.closeDrawers();
                     return true;
                 }
@@ -175,6 +172,11 @@ public class MainActivity extends AppCompatActivity {
                 }
                 case R.id.tripDelete: {
                     fragmentManager.beginTransaction().replace(R.id.fragment_container, new TripDelete()).commit();
+                    drawerLayout.closeDrawers();
+                    return true;
+                }
+                case R.id.seeTransactions: {
+                    fragmentManager.beginTransaction().replace(R.id.fragment_container, new Transactions()).commit();
                     drawerLayout.closeDrawers();
                     return true;
                 }

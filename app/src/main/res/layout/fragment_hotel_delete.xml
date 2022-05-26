@@ -24,12 +24,12 @@
 
         <TextView
             android:id="@+id/HotelDeleteIDText"
-            android:layout_width="62dp"
+            android:layout_width="wrap_content"
             android:layout_height="21dp"
-            android:text="Hotel ID"
+            android:text="Choose Hotel"
             app:layout_constraintBottom_toTopOf="@+id/HotelDeleteChoose"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.137"
+            app:layout_constraintHorizontal_bias="0.147"
             app:layout_constraintStart_toStartOf="parent" />
 
         <Spinner
@@ -42,21 +42,66 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.494"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/HotelDeleteTitle"
+            app:layout_constraintTop_toBottomOf="@+id/HotelDeleteChooseCity"
             tools:ignore="SpeakableTextPresentCheck" />
 
         <Button
             android:id="@+id/HotelDeleteButton"
             android:layout_width="314dp"
             android:layout_height="48dp"
-            android:layout_marginTop="56dp"
+            android:layout_marginBottom="34dp"
             android:background="@color/brown"
             android:text="Delete"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.498"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/HotelDeleteChoose"
             tools:ignore="TextContrastCheck" />
+
+        <Spinner
+            android:id="@+id/HotelDeleteChooseCountry"
+            android:layout_width="314dp"
+            android:layout_height="52dp"
+            android:layout_marginTop="56dp"
+            android:background="@android:drawable/btn_dropdown"
+            android:spinnerMode="dropdown"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/HotelDeleteTitle" />
+
+        <Spinner
+            android:id="@+id/HotelDeleteChooseCity"
+            android:layout_width="314dp"
+            android:layout_height="52dp"
+            android:layout_marginTop="56dp"
+            android:background="@android:drawable/btn_dropdown"
+            android:spinnerMode="dropdown"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/HotelDeleteChooseCountry" />
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="49dp"
+            android:layout_marginEnd="304dp"
+            android:text="Choose City"
+            app:layout_constraintBottom_toTopOf="@+id/HotelDeleteChooseCity"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.058"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="49dp"
+            android:layout_marginEnd="262dp"
+            android:text="Choose Country"
+            app:layout_constraintBottom_toTopOf="@+id/HotelDeleteChooseCountry"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </FrameLayout>
