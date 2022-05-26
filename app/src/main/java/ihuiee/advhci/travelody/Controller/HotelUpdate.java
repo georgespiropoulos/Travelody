@@ -65,7 +65,7 @@ public class HotelUpdate extends Fragment {
         city.setAdapter(cityAdapter);
 
         hotelAdapter.setDropDownViewResource(androidx.appcompat.R.layout.support_simple_spinner_dropdown_item);
-        hotel.setAdapter(cityAdapter);
+        hotel.setAdapter(hotelAdapter);
 
         hotelsList.addAll(db.hotelsDao().getHotelNames());
         hotelsList.sort(String::compareToIgnoreCase);

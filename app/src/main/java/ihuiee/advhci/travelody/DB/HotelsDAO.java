@@ -35,4 +35,7 @@ public interface HotelsDAO {
 
     @Query("SELECT * FROM hotels WHERE hotel_id = :id ")
     Hotels getHotelById(int id);
+
+    @Query("SELECT * FROM hotels WHERE hotel_city_id = :cityID ")
+    List<Hotels> getHotelsOfACity(int cityID);
 }
