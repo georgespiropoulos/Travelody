@@ -24,8 +24,8 @@
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/ResultsView"
-            android:layout_width="413dp"
-            android:layout_height="441dp"
+            android:layout_width="500dp"
+            android:layout_height="213dp"
             android:layout_marginTop="24dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -35,7 +35,7 @@
             android:id="@+id/ResultsNextButton"
             android:layout_width="314dp"
             android:layout_height="48dp"
-            android:layout_marginBottom="34dp"
+            android:layout_marginBottom="30dp"
             android:background="@color/brown"
             android:text="Next"
             app:layout_constraintBottom_toBottomOf="parent"

@@ -4,46 +4,59 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Controller.TripResults">
+    tools:context=".Controller.TransportationAdd">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
         <TextView
-            android:id="@+id/ResultsTitle"
+            android:id="@+id/TransportationAddTitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="24dp"
-            android:text="Results"
+            android:text="Transportation"
             android:textSize="30dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.498"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/ResultsView"
-            android:layout_width="413dp"
-            android:layout_height="441dp"
-            android:layout_marginTop="24dp"
+        <TextView
+            android:id="@+id/TransportationName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Name"
+            app:layout_constraintBottom_toTopOf="@+id/TransportationAddName"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/ResultsTitle" />
+            app:layout_constraintHorizontal_bias="0.281"
+            app:layout_constraintStart_toStartOf="parent" />
 
-        <Button
-            android:id="@+id/ResultsNextButton"
+        <EditText
+            android:id="@+id/TransportationAddName"
             android:layout_width="314dp"
             android:layout_height="48dp"
-            android:layout_marginBottom="34dp"
+            android:layout_marginTop="24dp"
+            android:ems="10"
+            android:hint="Name"
+            android:inputType="textCapCharacters"
+            android:textAlignment="center"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.494"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/TransportationAddTitle" />
+
+        <Button
+            android:id="@+id/TransportationSubmit"
+            android:layout_width="314dp"
+            android:layout_height="48dp"
+            android:layout_marginBottom="40dp"
             android:background="@color/brown"
-            android:text="Next"
+            android:text="Submit"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintHorizontal_bias="0.493"
             app:layout_constraintStart_toStartOf="parent"
             tools:ignore="TextContrastCheck" />
     </androidx.constraintlayout.widget.ConstraintLayout>
-
 </FrameLayout>
-

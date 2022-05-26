@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.Toolbar xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="?actionBarSize"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/toolbar"
+    android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
+    android:background="@color/brown">
+
+    <ImageButton
+        android:id="@+id/buttonMenu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="start"
+        android:background="@color/brown"
+        android:src="@mipmap/baseline_menu_white_48"
+        tools:ignore="SpeakableTextPresentCheck"></ImageButton>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:text="Travelody"
+        android:textSize="30dp"
+        android:paddingTop="7dp"
+        android:paddingEnd="20dp"
+        android:textAlignment="center"
+        android:textColor="@color/white"></TextView>
+
+</androidx.appcompat.widget.Toolbar>
