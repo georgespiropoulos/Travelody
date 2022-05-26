@@ -11,12 +11,12 @@
         android:title="Add"
         android:icon="@mipmap/baseline_add_black_48">
         <menu>
+            <item android:id="@+id/countryAdd"
+            android:title="Country"
+            android:icon="@mipmap/baseline_public_black_48"></item>
             <item android:id="@+id/cityAdd"
                 android:title="City"
                 android:icon="@mipmap/baseline_location_city_black_48"></item>
-            <item android:id="@+id/countryAdd"
-                android:title="Country"
-                android:icon="@mipmap/baseline_public_black_48"></item>
             <item android:id="@+id/hotelAdd"
                 android:title="Hotel"
                 android:icon="@mipmap/baseline_hotel_black_48"></item>
@@ -35,12 +35,12 @@
         android:title="Search"
         android:icon="@mipmap/baseline_search_black_48">
         <menu>
+            <item android:id="@+id/countrySearch"
+            android:title="Country"
+            android:icon="@mipmap/baseline_public_black_48"></item>
             <item android:id="@+id/citySearch"
                 android:title="City"
                 android:icon="@mipmap/baseline_location_city_black_48"></item>
-            <item android:id="@+id/countrySearch"
-                android:title="Country"
-                android:icon="@mipmap/baseline_public_black_48"></item>
             <item android:id="@+id/hotelSearch"
                 android:title="Hotel"
                 android:icon="@mipmap/baseline_hotel_black_48"></item>
@@ -59,12 +59,12 @@
     <item android:id="@+id/updateMenu"
         android:title="Update">
         <menu>
+            <item android:id="@+id/countryUpdate"
+            android:title="Country"
+            android:icon="@mipmap/baseline_public_black_48"></item>
             <item android:id="@+id/cityUpdate"
                 android:title="City"
                 android:icon="@mipmap/baseline_location_city_black_48"></item>
-            <item android:id="@+id/countryUpdate"
-                android:title="Country"
-                android:icon="@mipmap/baseline_public_black_48"></item>
             <item android:id="@+id/hotelUpdate"
                 android:title="Hotel"
                 android:icon="@mipmap/baseline_hotel_black_48"></item>
@@ -82,12 +82,12 @@
     <item android:id="@+id/deleteMenu"
         android:title="Delete">
         <menu>
+            <item android:id="@+id/countryDelete"
+            android:title="Country"
+            android:icon="@mipmap/baseline_public_black_48"></item>
             <item android:id="@+id/cityDelete"
                 android:title="City"
                 android:icon="@mipmap/baseline_location_city_black_48"></item>
-            <item android:id="@+id/countryDelete"
-                android:title="Country"
-                android:icon="@mipmap/baseline_public_black_48"></item>
             <item android:id="@+id/hotelDelete"
                 android:title="Hotel"
                 android:icon="@mipmap/baseline_hotel_black_48"></item>
