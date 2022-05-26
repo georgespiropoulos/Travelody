@@ -7,6 +7,8 @@ import androidx.room.ForeignKey;
 import androidx.room.Index;
 import androidx.room.PrimaryKey;
 
+import java.io.Serializable;
+
 @Entity (tableName = "hotels",
         indices = {@Index(value = {"hotel_name"}, unique = true)},
         foreignKeys = {
@@ -20,7 +22,7 @@ import androidx.room.PrimaryKey;
                 childColumns = "hotel_city_id",
                 onDelete = ForeignKey.CASCADE,
                 onUpdate = ForeignKey.CASCADE)})
-public class Hotels {
+public class Hotels implements Serializable {
     @PrimaryKey(autoGenerate = true)
     @ColumnInfo(name = "hotel_id") @NonNull
     public int idOfHotel;

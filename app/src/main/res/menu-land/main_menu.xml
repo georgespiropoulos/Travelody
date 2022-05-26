@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:id="@+id/home"
+        android:title="Home"
+        android:icon="@mipmap/baseline_home_black_48">
+    </item>
+    <item android:id="@+id/add"
+        android:title="Add"
+        android:icon="@mipmap/baseline_add_black_48">
+        <menu>
+            <item android:id="@+id/countryAdd"
+            android:title="Country"
+            android:icon="@mipmap/baseline_public_black_48"></item>
+            <item android:id="@+id/cityAdd"
+                android:title="City"
+                android:icon="@mipmap/baseline_location_city_black_48"></item>
+            <item android:id="@+id/hotelAdd"
+                android:title="Hotel"
+                android:icon="@mipmap/baseline_hotel_black_48"></item>
+            <item android:id="@+id/transportationAdd"
+                android:title="Transportation"
+                android:icon="@mipmap/baseline_commute_black_48"></item>
+            <item android:id="@+id/travelAgencyAdd"
+                android:title="Travel Agency"
+                android:icon="@mipmap/baseline_travel_explore_black_48"></item>
+            <item android:id="@+id/tripAdd"
+                android:title="Trip"
+                android:icon="@mipmap/baseline_luggage_black_48"></item>
+        </menu>
+    </item>
+    <item android:id="@+id/searchMenu"
+        android:title="Search"
+        android:icon="@mipmap/baseline_search_black_48">
+        <menu>
+            <item android:id="@+id/countrySearch"
+            android:title="Country"
+            android:icon="@mipmap/baseline_public_black_48"></item>
+            <item android:id="@+id/citySearch"
+                android:title="City"
+                android:icon="@mipmap/baseline_location_city_black_48"></item>
+            <item android:id="@+id/hotelSearch"
+                android:title="Hotel"
+                android:icon="@mipmap/baseline_hotel_black_48"></item>
+            <item android:id="@+id/transportationSearch"
+                android:title="Transportation"
+                android:icon="@mipmap/baseline_commute_black_48"></item>
+            <item android:id="@+id/travelAgencySearch"
+                android:title="Travel Agency"
+                android:icon="@mipmap/baseline_travel_explore_black_48"></item>
+            <item android:id="@+id/tripSearch"
+                android:title="Trip"
+                android:icon="@mipmap/baseline_luggage_black_48"></item>
+        </menu>
+
+    </item>
+    <item android:id="@+id/updateMenu"
+        android:title="Update">
+        <menu>
+            <item android:id="@+id/countryUpdate"
+            android:title="Country"
+            android:icon="@mipmap/baseline_public_black_48"></item>
+            <item android:id="@+id/cityUpdate"
+                android:title="City"
+                android:icon="@mipmap/baseline_location_city_black_48"></item>
+            <item android:id="@+id/hotelUpdate"
+                android:title="Hotel"
+                android:icon="@mipmap/baseline_hotel_black_48"></item>
+            <item android:id="@+id/transportationUpdate"
+                android:title="Transportation"
+                android:icon="@mipmap/baseline_commute_black_48"></item>
+            <item android:id="@+id/travelAgencyUpdate"
+                android:title="Travel Agency"
+                android:icon="@mipmap/baseline_travel_explore_black_48"></item>
+            <item android:id="@+id/tripUpdate"
+                android:title="Trip"
+                android:icon="@mipmap/baseline_luggage_black_48"></item>
+        </menu>
+    </item>
+    <item android:id="@+id/deleteMenu"
+        android:title="Delete">
+        <menu>
+            <item android:id="@+id/countryDelete"
+            android:title="Country"
+            android:icon="@mipmap/baseline_public_black_48"></item>
+            <item android:id="@+id/cityDelete"
+                android:title="City"
+                android:icon="@mipmap/baseline_location_city_black_48"></item>
+            <item android:id="@+id/hotelDelete"
+                android:title="Hotel"
+                android:icon="@mipmap/baseline_hotel_black_48"></item>
+            <item android:id="@+id/transportationDelete"
+                android:title="Transportation"
+                android:icon="@mipmap/baseline_commute_black_48"></item>
+            <item android:id="@+id/travelAgencyDelete"
+                android:title="Travel Agency"
+                android:icon="@mipmap/baseline_travel_explore_black_48"></item>
+            <item android:id="@+id/tripDelete"
+                android:title="Trip"
+                android:icon="@mipmap/baseline_luggage_black_48"></item>
+        </menu>
+    </item>
+    <item android:id="@+id/transactionsMenu"
+        android:title="Transactions">
+        <menu>
+            <item android:id="@+id/seeTransactions"
+                android:title="Booked Trips"
+                android:icon="@mipmap/outline_paid_black_48">
+            </item>
+        </menu>
+    </item>
+    <item android:id="@+id/exitMenu"
+        android:title="Exit App">
+        <menu>
+            <item android:id="@+id/exit"
+                android:title="Exit"
+                android:icon="@mipmap/baseline_exit_to_app_black_48">
+            </item>
+        </menu>
+    </item>
+</menu>

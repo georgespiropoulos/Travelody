@@ -1,13 +1,17 @@
 package ihuiee.advhci.travelody.Controller;
 
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.FragmentManager;
 import androidx.appcompat.widget.Toolbar;
 import androidx.room.Room;
+
+import android.content.res.Configuration;
 import android.os.Bundle;
 import android.widget.ImageButton;
+import android.widget.Toast;
 
 
 import com.google.android.material.navigation.NavigationView;
@@ -23,9 +27,11 @@ public class MainActivity extends AppCompatActivity {
     NavigationView navigationView;
     ImageButton menuBtn;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         setContentView(R.layout.activity_main);
         fragmentManager = getSupportFragmentManager();
         database = Room.databaseBuilder(getApplicationContext(),AppDatabase.class, "TravelodyDB").allowMainThreadQueries().build();
@@ -33,7 +39,7 @@ public class MainActivity extends AppCompatActivity {
             if(savedInstanceState!=null){
                 return;
             }
-            fragmentManager.beginTransaction().add(R.id.fragment_container, new StartingFragment()).commit();
+            fragmentManager.beginTransaction().replace(R.id.fragment_container, new StartingFragment()).commit();
         }
 
         toolbar = findViewById(R.id.toolbar);
@@ -42,6 +48,7 @@ public class MainActivity extends AppCompatActivity {
 
         drawerLayout = findViewById(R.id.drawer_layout);
         navigationView = findViewById(R.id.navigationView);
+
 
         menuBtn=(ImageButton) findViewById(R.id.buttonMenu);
         menuBtn.setOnClickListener(view -> {
@@ -189,6 +196,15 @@ public class MainActivity extends AppCompatActivity {
                     return false;
             }
         });
+    }
+    @Override
+    public void onConfigurationChanged(Configuration newConfig) {
+        super.onConfigurationChanged(newConfig);
+
+        // Checks the orientation of the screen
+        if (newConfig.orientation == Configuration.ORIENTATION_LANDSCAPE) {
+        } else if (newConfig.orientation == Configuration.ORIENTATION_PORTRAIT){
+        }
     }
 
 }

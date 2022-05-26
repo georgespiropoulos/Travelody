@@ -82,24 +82,36 @@ public class HotelResults extends Fragment {
         recyclerView.setAdapter(resultsAdapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(requireContext()));
 
-        mapBtn.setOnClickListener(view1 -> {
-            int id = resultsAdapter.hotelToSearch();
-            String address = db.hotelsDao().getHotelById(id).addressOfHotel;
-            String name = db.hotelsDao().getHotelById(id).nameOfHotel;
-            Geocoder geocoder = new Geocoder(getContext());
-            try{
-                ExecutorService executorService = Executors.newSingleThreadExecutor();
-                Handler handler = new Handler(Looper.getMainLooper());
-                List<Address> geoResults = geocoder.getFromLocationName(address, 1);
-                Address addr = geoResults.get(0);
-                String uri = String.format(Locale.ENGLISH, "geo:%f,%f?z=20&q=%s&(%s)", addr.getLatitude(), addr.getLongitude(),Uri.encode(name), 1);
-                Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(uri));
-                intent.setPackage("com.google.android.apps.maps");
-                startActivity(intent);
-            }catch (IOException e){
-                e.printStackTrace();
-            }
-        });
+        try {
+            mapBtn.setOnClickListener(view1 -> {
+                int id = resultsAdapter.hotelToSearch();
+                if (id != -1) {
+                    String address = db.hotelsDao().getHotelById(id).addressOfHotel;
+                    String name = db.hotelsDao().getHotelById(id).nameOfHotel;
+                    Geocoder geocoder = new Geocoder(getContext());
+                    try {
+                        ExecutorService executorService = Executors.newSingleThreadExecutor();
+                        Handler handler = new Handler(Looper.getMainLooper());
+                        List<Address> geoResults = geocoder.getFromLocationName(address, 1);
+                        Address addr = geoResults.get(0);
+                        String uri = String.format(Locale.ENGLISH, "geo:%f,%f?z=17&q=%s", addr.getLatitude(), addr.getLongitude(),Uri.encode(name), 1);
+                        Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(uri));
+                        intent.setPackage("com.google.android.apps.maps");
+                        Intent chooser = Intent.createChooser(intent, "Launch Maps");
+
+                        executorService.execute(() -> {
+                            getContext().startActivity(chooser);
+                            handler.post(() -> {
+
+                            });
+                        });
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+                } else
+                    Toast.makeText(requireActivity().getApplicationContext(), "Choose a hotel", Toast.LENGTH_LONG).show();
+            });
+        }catch (Exception e){}
 
     }
 }
