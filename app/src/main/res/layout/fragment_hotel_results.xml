@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".hotel_results">
+    tools:context="Controller.HotelResults">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -23,21 +23,22 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/recyclerView"
-            android:layout_width="385dp"
-            android:layout_height="416dp"
+            android:id="@+id/recyclerViewHotel"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="140dp"
+            android:layout_marginBottom="100dp"
             app:layout_constraintBottom_toTopOf="@+id/ShowOnMap"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.384"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/ResultsHotel"
-            app:layout_constraintVertical_bias="0.793" />
+            app:layout_constraintTop_toBottomOf="@+id/HotelResultsName" />
 
         <TextView
             android:id="@+id/HotelResultsID"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="40dp"
+            android:layout_marginStart="30dp"
             android:layout_marginTop="24dp"
             android:text="ID"
             android:textSize="16dp"

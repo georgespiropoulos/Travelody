@@ -22,7 +22,7 @@
             android:id="@+id/resultName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="120dp"
+            android:layout_marginStart="180dp"
             android:hint="GREECE"
             android:textSize="20sp" />
     </LinearLayout>

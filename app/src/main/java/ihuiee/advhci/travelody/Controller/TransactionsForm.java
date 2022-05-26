@@ -1,9 +1,19 @@
 package ihuiee.advhci.travelody.Controller;
 
+import android.app.Notification;
+import android.app.NotificationChannel;
+import android.app.NotificationManager;
+import android.app.PendingIntent;
+import android.app.Service;
+import android.content.Context;
+import android.content.Intent;
+import android.graphics.Bitmap;
+import android.os.Build;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.core.app.NotificationCompat;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 
@@ -37,7 +47,6 @@ public class TransactionsForm extends Fragment {
     RadioGroup paymentGroup;
     FirebaseFirestore fb;
     FragmentManager fragmentManager = getFragmentManager();
-    boolean success = false;
 
 
     @Override
@@ -45,6 +54,7 @@ public class TransactionsForm extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_form, container, false);
+
     }
 
     @Override
@@ -81,6 +91,21 @@ public class TransactionsForm extends Fragment {
                         public void onSuccess(Void unused) {
                         }
                     });
+                NotificationManager notificationManager = (NotificationManager) getActivity().getSystemService(getActivity().NOTIFICATION_SERVICE);
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O){
+                    NotificationChannel channel = new NotificationChannel("TRANSACTION_OK", "TRANSACTIONS", notificationManager.IMPORTANCE_HIGH);
+                    channel.setDescription("Notifications for Transactions");
+                    notificationManager.createNotificationChannel(channel);
+                }
+                NotificationCompat.Builder builder = new NotificationCompat.Builder(getActivity().getApplicationContext(), "TRANSACTION_OK")
+                        .setSmallIcon(R.drawable.travelody)
+                        .setContentTitle("Trip Transaction Made")
+                        .setContentText(surname.getText().toString()+" "+name.getText().toString()+" BOUGHT A TRIP WITH ID: "+tripId)
+                        .setAutoCancel(true);
+                Intent intent = new Intent(getActivity().getApplicationContext(), MainActivity.class);
+                PendingIntent pendingIntent = PendingIntent.getActivity(this.requireContext(), 0, intent, PendingIntent.FLAG_UPDATE_CURRENT);
+                builder.setContentIntent(pendingIntent);
+                notificationManager.notify(0,builder.build());
                     Toast.makeText(getActivity().getApplicationContext(), "Transaction Completed", Toast.LENGTH_LONG).show();
                     fragmentManager.beginTransaction().replace(R.id.fragment_container, new TripSearch()).commit();
                 }catch (Exception e){
@@ -90,4 +115,5 @@ public class TransactionsForm extends Fragment {
 
         });
     }
+
 }
