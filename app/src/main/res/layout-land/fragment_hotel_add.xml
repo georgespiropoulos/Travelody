@@ -94,7 +94,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.836"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/HotelAddChooseCity"
+            app:layout_constraintTop_toBottomOf="@+id/HotelAddTitle"
             tools:ignore="SpeakableTextPresentCheck" />
 
         <Spinner
@@ -107,7 +107,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.836"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/HotelAddTitle"
+            app:layout_constraintTop_toBottomOf="@+id/HotelAddChooseCountry"
             tools:ignore="SpeakableTextPresentCheck" />
 
         <TextView
