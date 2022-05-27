@@ -2,14 +2,18 @@ package ihuiee.advhci.travelody.Controller;
 
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.FragmentManager;
 import androidx.appcompat.widget.Toolbar;
 import androidx.room.Room;
 
+import android.content.Context;
 import android.content.res.Configuration;
 import android.os.Bundle;
+import android.util.AttributeSet;
+import android.view.View;
 import android.widget.ImageButton;
 import android.widget.Toast;
 
@@ -27,8 +31,6 @@ public class MainActivity extends AppCompatActivity {
     NavigationView navigationView;
     ImageButton menuBtn;
 
-
-    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
@@ -60,6 +62,7 @@ public class MainActivity extends AppCompatActivity {
                 case R.id.home: {
                     fragmentManager.beginTransaction().replace(R.id.fragment_container, new StartingFragment()).commit();
                     drawerLayout.closeDrawers();
+                    System.out.println("Clicked");
                     return true;
                 }
                 case R.id.cityAdd: {
@@ -197,14 +200,4 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
-    @Override
-    public void onConfigurationChanged(Configuration newConfig) {
-        super.onConfigurationChanged(newConfig);
-
-        // Checks the orientation of the screen
-        if (newConfig.orientation == Configuration.ORIENTATION_LANDSCAPE) {
-        } else if (newConfig.orientation == Configuration.ORIENTATION_PORTRAIT){
-        }
-    }
-
 }
