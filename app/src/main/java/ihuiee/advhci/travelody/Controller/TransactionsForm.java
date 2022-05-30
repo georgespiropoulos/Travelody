@@ -16,6 +16,7 @@ import androidx.annotation.Nullable;
 import androidx.core.app.NotificationCompat;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
+import androidx.room.Room;
 
 import android.text.TextUtils;
 import android.view.LayoutInflater;
@@ -35,6 +36,7 @@ import com.google.firebase.firestore.FirebaseFirestore;
 import java.util.HashMap;
 import java.util.Objects;
 
+import ihuiee.advhci.travelody.DB.AppDatabase;
 import ihuiee.advhci.travelody.R;
 
 public class TransactionsForm extends Fragment {
@@ -61,6 +63,7 @@ public class TransactionsForm extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
+        AppDatabase db = Room.databaseBuilder(requireContext(), AppDatabase.class, "TravelodyDB").allowMainThreadQueries().build();
         fb = FirebaseFirestore.getInstance();
 
         try {
@@ -69,6 +72,7 @@ public class TransactionsForm extends Fragment {
             Toast.makeText(requireActivity().getApplicationContext(),"Something went wrong",Toast.LENGTH_LONG).show();
         }
 
+        String hotelName = db.hotelsDao().getHotelById(db.tripsDao().getTripById(tripId).hotelIdOfTrip).nameOfHotel.replace(" ","_");
         fragmentManager = getParentFragmentManager();
         name = view.findViewById(R.id.FormName);
         surname = view.findViewById(R.id.Surname);
@@ -78,7 +82,7 @@ public class TransactionsForm extends Fragment {
         completeTransaction.setOnClickListener(view1 -> {
             selectedPayment = view.findViewById(paymentGroup.getCheckedRadioButtonId());
             if (!TextUtils.isEmpty(name.getText().toString()) && !TextUtils.isEmpty(surname.getText().toString()) && selectedPayment!=null){
-                CollectionReference dbTransactions = fb.collection("Transactions/Trips/"+tripId);
+                CollectionReference dbTransactions = fb.collection("Transactions/Trips/"+tripId+"_"+hotelName);
 
                 HashMap<String, String> transaction = new HashMap<>();
                 transaction.put("Όνομα", name.getText().toString());

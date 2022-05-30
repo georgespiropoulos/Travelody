@@ -81,8 +81,12 @@ public class Transactions extends Fragment {
         trip.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long l) {
+                String selectedHotel = "";
                 selectedTrip = parent.getItemAtPosition(position).toString();
-                fb.collection("Transactions").document("Trips").collection(selectedTrip).get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+                try {
+                    selectedHotel = db.hotelsDao().getHotelById(db.tripsDao().getTripById(Integer.parseInt(selectedTrip)).hotelIdOfTrip).nameOfHotel.replace(" ", "_");
+                }catch (Exception e){}
+                fb.collection("Transactions").document("Trips").collection(selectedTrip+"_"+selectedHotel).get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
                     @Override
                     public void onComplete(@NonNull Task<QuerySnapshot> task) {
                         if (task.isSuccessful()) {

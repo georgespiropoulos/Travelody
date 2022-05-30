@@ -53,7 +53,7 @@ public class CityResults extends Fragment {
         fragmentManager = getParentFragmentManager();
 
         for (int i=0; i < cities.size(); i++){
-            ids.add(Integer.toString(cities.get(i).idOfCountry));
+            ids.add(Integer.toString(cities.get(i).idOfCity));
             names.add(cities.get(i).nameOfCity);
         }
 
