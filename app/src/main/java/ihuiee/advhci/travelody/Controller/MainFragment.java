@@ -41,8 +41,11 @@ public class MainFragment extends Fragment {
 
         fragmentManager = getParentFragmentManager();
 
-        if(view.findViewById(R.id.fragment_container)==null){
-            fragmentManager.beginTransaction().add(R.id.fragment_container, new StartingFragment()).commit();
+        if(view.findViewById(R.id.fragment_container)!=null){
+            if(savedInstanceState!=null){
+                return;
+            }
+            fragmentManager.beginTransaction().replace(R.id.fragment_container, new StartingFragment()).commit();
         }
 
         drawerLayout = view.findViewById(R.id.drawer_layout);
