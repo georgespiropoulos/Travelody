@@ -33,12 +33,11 @@ public class MainActivity extends AppCompatActivity {
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
         setContentView(R.layout.activity_main);
         fragmentManager = getSupportFragmentManager();
         database = Room.databaseBuilder(getApplicationContext(),AppDatabase.class, "TravelodyDB").allowMainThreadQueries().build();
         if(findViewById(R.id.activity_fragment_container)!=null){
-            if(savedInstanceState!=null){
+            if (savedInstanceState!=null){
                 return;
             }
             fragmentManager.beginTransaction().replace(R.id.activity_fragment_container, new MainFragment()).commit();
