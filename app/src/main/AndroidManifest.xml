@@ -11,7 +11,6 @@
         android:theme="@style/Theme.Travelody" >
         <activity
             android:turnScreenOn="true"
-            android:configChanges="orientation|screenSize|screenLayout|keyboardHidden"
             android:name=".Controller.MainActivity"
             android:exported="true" >
             <intent-filter>

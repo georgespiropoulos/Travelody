@@ -87,6 +87,7 @@ public class TravelAgencyUpdate extends Fragment {
                         travelAgencyAdapter.addAll(travelAgencyList);
                         travelAgencyAdapter.notifyDataSetChanged();
                         travelAgency.setSelection(0);
+                        travelAgencyName.setText("");
 
                         Toast.makeText(getActivity().getApplicationContext(), "Travel Agency updated", Toast.LENGTH_LONG).show();
                     }catch (Exception e){

@@ -129,7 +129,7 @@ public class HotelUpdate extends Fragment {
         submitButton.setOnClickListener(view1 -> {
             if (!selectedHotel.equals(defaultSelection) && !TextUtils.isEmpty(hotelName.getText().toString()) && !TextUtils.isEmpty(hotelAddress.getText().toString())){
                 Hotels hotel1 = new Hotels();
-                hotel1.setCityIdOfHotel(db.hotelsDao().getHotelIdByHotelName(selectedHotel));
+                hotel1.setIdOfHotel(db.hotelsDao().getHotelIdByHotelName(selectedHotel));
                 hotel1.setNameOfHotel(hotelName.getText().toString());
                 hotel1.setAddressOfHotel(hotelAddress.getText().toString());
                 if(!selectedCountry.equals(defaultSelection) && !selectedCity.equals(defaultSelection)) {

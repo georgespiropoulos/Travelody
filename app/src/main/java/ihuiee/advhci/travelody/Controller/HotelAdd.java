@@ -1,5 +1,6 @@
 package ihuiee.advhci.travelody.Controller;
 
+import android.content.res.Configuration;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -43,6 +44,7 @@ public class HotelAdd extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_hotel_add, container, false);
+
     }
 
     @Override

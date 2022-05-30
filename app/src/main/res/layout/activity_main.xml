@@ -14,10 +14,9 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
-        <include layout="@layout/toolbar_layout"></include>
 
         <androidx.fragment.app.FragmentContainerView
-            android:id="@+id/fragment_container"
+            android:id="@+id/activity_fragment_container"
             android:layout_width="match_parent"
             android:layout_height="match_parent" />
 
