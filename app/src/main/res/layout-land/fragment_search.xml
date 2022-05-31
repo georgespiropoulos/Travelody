@@ -29,7 +29,7 @@
             android:text="Search Country"
             app:layout_constraintBottom_toTopOf="@+id/SearchCountryDropdown"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.097"
+            app:layout_constraintHorizontal_bias="0.054"
             app:layout_constraintStart_toStartOf="parent" />
 
         <TextView
@@ -39,7 +39,7 @@
             android:text="Search City"
             app:layout_constraintBottom_toTopOf="@+id/SearchCityDropdown"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.679"
+            app:layout_constraintHorizontal_bias="0.736"
             app:layout_constraintStart_toStartOf="parent" />
 
         <TextView
@@ -49,18 +49,17 @@
             android:text="Search Hotel"
             app:layout_constraintBottom_toTopOf="@+id/SearchHotelDropdown"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.094"
+            app:layout_constraintHorizontal_bias="0.053"
             app:layout_constraintStart_toStartOf="parent" />
 
         <Spinner
             android:id="@+id/SearchCountryDropdown"
             android:layout_width="200dp"
             android:layout_height="52dp"
+            android:layout_marginStart="32dp"
             android:layout_marginTop="24dp"
             android:background="@android:drawable/btn_dropdown"
             android:spinnerMode="dropdown"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.118"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/SearchTitle"
             tools:ignore="SpeakableTextPresentCheck" />
@@ -70,11 +69,10 @@
             android:layout_width="200dp"
             android:layout_height="52dp"
             android:layout_marginTop="24dp"
+            android:layout_marginEnd="32dp"
             android:background="@android:drawable/btn_dropdown"
             android:spinnerMode="dropdown"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.861"
-            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/SearchTitle"
             tools:ignore="SpeakableTextPresentCheck" />
 
@@ -82,11 +80,10 @@
             android:id="@+id/SearchHotelDropdown"
             android:layout_width="200dp"
             android:layout_height="52dp"
+            android:layout_marginStart="32dp"
             android:layout_marginTop="24dp"
             android:background="@android:drawable/btn_dropdown"
             android:spinnerMode="dropdown"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.118"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/SearchCountryDropdown"
             tools:ignore="SpeakableTextPresentCheck" />

@@ -27,10 +27,9 @@
             android:id="@+id/HotelSearchChooseCountry"
             android:layout_width="200dp"
             android:layout_height="48dp"
+            android:layout_marginStart="32dp"
             android:layout_marginTop="24dp"
             android:background="@android:drawable/btn_dropdown"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.118"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/HotelSearchTitle" />
 
@@ -38,31 +37,28 @@
             android:id="@+id/HotelSearchChooseCountryText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
             android:text="Choose Country"
             app:layout_constraintBottom_toTopOf="@+id/HotelSearchChooseCountry"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.097"
             app:layout_constraintStart_toStartOf="parent" />
 
         <TextView
             android:id="@+id/HotelSearchChooseCityText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginEnd="156dp"
             android:text="Choose City"
             app:layout_constraintBottom_toTopOf="@+id/HotelSearchChooseCity"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.708"
-            app:layout_constraintStart_toStartOf="parent" />
+            app:layout_constraintEnd_toEndOf="parent" />
 
         <Spinner
             android:id="@+id/HotelSearchChooseCity"
             android:layout_width="200dp"
             android:layout_height="48dp"
             android:layout_marginTop="24dp"
+            android:layout_marginEnd="32dp"
             android:background="@android:drawable/btn_dropdown"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.892"
-            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/HotelSearchTitle" />
 
         <Button
