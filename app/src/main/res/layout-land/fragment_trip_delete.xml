@@ -14,48 +14,37 @@
             android:id="@+id/DeleteText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="24dp"
-            android:text="Delete"
+            android:layout_marginTop="48dp"
+            android:text="Trip"
             android:textSize="30dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <Spinner
-            android:id="@+id/TripDelete"
-            android:layout_width="314dp"
-            android:layout_height="48dp"
-            android:layout_marginTop="24dp"
-            android:background="@android:drawable/btn_dropdown"
-            android:spinnerMode="dropdown"
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/TripDeleteRecyclerView"
+            android:layout_width="500dp"
+            android:layout_height="213dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginBottom="4dp"
+            app:layout_constraintBottom_toTopOf="@+id/DeleteTripButton"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.494"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/DeleteText"
-            tools:ignore="SpeakableTextPresentCheck" />
-
-        <TextView
-            android:id="@+id/TripIDDelete"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Trip ID"
-            app:layout_constraintBottom_toTopOf="@+id/TripDelete"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.283"
-            app:layout_constraintStart_toStartOf="parent" />
+            app:layout_constraintTop_toBottomOf="@+id/DeleteText" />
 
         <Button
             android:id="@+id/DeleteTripButton"
             android:layout_width="314dp"
             android:layout_height="48dp"
-            android:layout_marginBottom="40dp"
+            android:layout_marginBottom="34dp"
             android:background="@color/brown"
             android:text="Delete"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.493"
+            app:layout_constraintHorizontal_bias="0.494"
             app:layout_constraintStart_toStartOf="parent"
             tools:ignore="TextContrastCheck" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </FrameLayout>

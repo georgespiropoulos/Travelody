@@ -27,33 +27,31 @@
             android:id="@+id/HotelAddNameText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
             android:text="Hotel Name"
             app:layout_constraintBottom_toTopOf="@+id/HotelAddName"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.026"
             app:layout_constraintStart_toStartOf="parent" />
 
         <TextView
             android:id="@+id/HotelAddAddressText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginBottom="1dp"
             android:text="Address"
             app:layout_constraintBottom_toTopOf="@+id/HotelAddAddress"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.025"
             app:layout_constraintStart_toStartOf="parent" />
 
         <EditText
             android:id="@+id/HotelAddName"
             android:layout_width="200dp"
             android:layout_height="48dp"
+            android:layout_marginStart="32dp"
             android:layout_marginTop="24dp"
             android:ems="10"
             android:hint="Hotel"
             android:inputType="textCapCharacters"
             android:textAlignment="center"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.033"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/HotelAddTitle" />
 
@@ -61,13 +59,12 @@
             android:id="@+id/HotelAddAddress"
             android:layout_width="200dp"
             android:layout_height="48dp"
+            android:layout_marginStart="32dp"
             android:layout_marginTop="24dp"
             android:ems="10"
             android:hint="Address"
             android:inputType="textCapCharacters"
             android:textAlignment="center"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.033"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/HotelAddName" />
 
@@ -89,11 +86,10 @@
             android:layout_width="200dp"
             android:layout_height="52dp"
             android:layout_marginTop="24dp"
+            android:layout_marginEnd="32dp"
             android:background="@android:drawable/btn_dropdown"
             android:spinnerMode="dropdown"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.836"
-            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/HotelAddTitle"
             tools:ignore="SpeakableTextPresentCheck" />
 
@@ -102,11 +98,10 @@
             android:layout_width="200dp"
             android:layout_height="52dp"
             android:layout_marginTop="24dp"
+            android:layout_marginEnd="32dp"
             android:background="@android:drawable/btn_dropdown"
             android:spinnerMode="dropdown"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.836"
-            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/HotelAddChooseCountry"
             tools:ignore="SpeakableTextPresentCheck" />
 
@@ -117,7 +112,7 @@
             android:text="Choose Country"
             app:layout_constraintBottom_toTopOf="@+id/HotelAddChooseCountry"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.692"
+            app:layout_constraintHorizontal_bias="0.773"
             app:layout_constraintStart_toStartOf="parent" />
 
         <TextView
@@ -127,7 +122,7 @@
             android:text="Choose City"
             app:layout_constraintBottom_toTopOf="@+id/HotelAddChooseCity"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.664"
+            app:layout_constraintHorizontal_bias="0.741"
             app:layout_constraintStart_toStartOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>

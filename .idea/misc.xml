@@ -4,12 +4,36 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/MyFiles/University/AdvancedInteraction/Travelody/app/src/main/res/layout-land/activity_main.xml" value="0.18229166666666666" />
-        <entry key="..\:/MyFiles/University/AdvancedInteraction/Travelody/app/src/main/res/layout-land/fragment_city_add.xml" value="0.18229166666666666" />
+        <entry key="..\:/MyFiles/University/AdvancedInteraction/Travelody/app/src/main/res/layout-land/fragment_city_add.xml" value="0.5" />
+        <entry key="..\:/MyFiles/University/AdvancedInteraction/Travelody/app/src/main/res/layout-land/fragment_city_delete.xml" value="0.5" />
+        <entry key="..\:/MyFiles/University/AdvancedInteraction/Travelody/app/src/main/res/layout-land/fragment_city_search.xml" value="0.6005208333333333" />
+        <entry key="..\:/MyFiles/University/AdvancedInteraction/Travelody/app/src/main/res/layout-land/fragment_city_update.xml" value="0.6005208333333333" />
+        <entry key="..\:/MyFiles/University/AdvancedInteraction/Travelody/app/src/main/res/layout-land/fragment_country_add.xml" value="0.6005208333333333" />
+        <entry key="..\:/MyFiles/University/AdvancedInteraction/Travelody/app/src/main/res/layout-land/fragment_country_delete.xml" value="0.19479166666666667" />
+        <entry key="..\:/MyFiles/University/AdvancedInteraction/Travelody/app/src/main/res/layout-land/fragment_country_update.xml" value="0.6005208333333333" />
+        <entry key="..\:/MyFiles/University/AdvancedInteraction/Travelody/app/src/main/res/layout-land/fragment_form.xml" value="0.6005208333333333" />
+        <entry key="..\:/MyFiles/University/AdvancedInteraction/Travelody/app/src/main/res/layout-land/fragment_hotel_add.xml" value="0.6005208333333333" />
+        <entry key="..\:/MyFiles/University/AdvancedInteraction/Travelody/app/src/main/res/layout-land/fragment_hotel_delete.xml" value="0.4207207207207207" />
         <entry key="..\:/MyFiles/University/AdvancedInteraction/Travelody/app/src/main/res/layout-land/fragment_hotel_results.xml" value="0.11923076923076924" />
+        <entry key="..\:/MyFiles/University/AdvancedInteraction/Travelody/app/src/main/res/layout-land/fragment_hotel_search.xml" value="0.6005208333333333" />
+        <entry key="..\:/MyFiles/University/AdvancedInteraction/Travelody/app/src/main/res/layout-land/fragment_hotel_update.xml" value="0.6005208333333333" />
         <entry key="..\:/MyFiles/University/AdvancedInteraction/Travelody/app/src/main/res/layout-land/fragment_results_universal.xml" value="0.22" />
+        <entry key="..\:/MyFiles/University/AdvancedInteraction/Travelody/app/src/main/res/layout-land/fragment_search.xml" value="0.6005208333333333" />
+        <entry key="..\:/MyFiles/University/AdvancedInteraction/Travelody/app/src/main/res/layout-land/fragment_starting.xml" value="0.6005208333333333" />
         <entry key="..\:/MyFiles/University/AdvancedInteraction/Travelody/app/src/main/res/layout-land/fragment_transactions.xml" value="0.1" />
-        <entry key="..\:/MyFiles/University/AdvancedInteraction/Travelody/app/src/main/res/layout-land/fragment_trip_delete.xml" value="0.25" />
+        <entry key="..\:/MyFiles/University/AdvancedInteraction/Travelody/app/src/main/res/layout-land/fragment_transportation_add.xml" value="0.6005208333333333" />
+        <entry key="..\:/MyFiles/University/AdvancedInteraction/Travelody/app/src/main/res/layout-land/fragment_transportation_delete.xml" value="0.6005208333333333" />
+        <entry key="..\:/MyFiles/University/AdvancedInteraction/Travelody/app/src/main/res/layout-land/fragment_transportation_update.xml" value="0.6005208333333333" />
+        <entry key="..\:/MyFiles/University/AdvancedInteraction/Travelody/app/src/main/res/layout-land/fragment_travel_agency_delete.xml" value="0.6005208333333333" />
+        <entry key="..\:/MyFiles/University/AdvancedInteraction/Travelody/app/src/main/res/layout-land/fragment_travel_agency_update.xml" value="0.6005208333333333" />
+        <entry key="..\:/MyFiles/University/AdvancedInteraction/Travelody/app/src/main/res/layout-land/fragment_trip_add.xml" value="0.6005208333333333" />
+        <entry key="..\:/MyFiles/University/AdvancedInteraction/Travelody/app/src/main/res/layout-land/fragment_trip_add_final.xml" value="0.5" />
+        <entry key="..\:/MyFiles/University/AdvancedInteraction/Travelody/app/src/main/res/layout-land/fragment_trip_add_step2.xml" value="0.6005208333333333" />
+        <entry key="..\:/MyFiles/University/AdvancedInteraction/Travelody/app/src/main/res/layout-land/fragment_trip_delete.xml" value="0.5" />
         <entry key="..\:/MyFiles/University/AdvancedInteraction/Travelody/app/src/main/res/layout-land/fragment_trip_results.xml" value="0.21822916666666667" />
+        <entry key="..\:/MyFiles/University/AdvancedInteraction/Travelody/app/src/main/res/layout-land/fragment_trip_update.xml" value="0.6005208333333333" />
+        <entry key="..\:/MyFiles/University/AdvancedInteraction/Travelody/app/src/main/res/layout-land/fragment_trip_update_choose.xml" value="0.6005208333333333" />
+        <entry key="..\:/MyFiles/University/AdvancedInteraction/Travelody/app/src/main/res/layout-land/fragment_trip_update_choose_final.xml" value="0.6005208333333333" />
         <entry key="..\:/MyFiles/University/AdvancedInteraction/Travelody/app/src/main/res/layout-land/results_row.xml" value="0.1" />
         <entry key="..\:/MyFiles/University/AdvancedInteraction/Travelody/app/src/main/res/layout-land/toolbar_layout.xml" value="0.1" />
         <entry key="..\:/MyFiles/University/AdvancedInteraction/Travelody/app/src/main/res/layout-port/fragment_hotel_add.xml" value="0.1" />

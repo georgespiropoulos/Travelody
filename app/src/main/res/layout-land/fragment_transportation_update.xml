@@ -14,10 +14,10 @@
             android:id="@+id/TransportationUpdateIDText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Transportation ID"
+            android:text="Transportation Name"
             app:layout_constraintBottom_toTopOf="@+id/TransportationUpdateChoose"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.027"
+            app:layout_constraintHorizontal_bias="0.055"
             app:layout_constraintStart_toStartOf="parent" />
 
         <TextView
@@ -49,11 +49,10 @@
             android:id="@+id/TransportationUpdateChoose"
             android:layout_width="200dp"
             android:layout_height="52dp"
-            android:layout_marginTop="20dp"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="24dp"
             android:background="@android:drawable/btn_dropdown"
             android:spinnerMode="dropdown"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.033"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/TransportationUpdateTitle"
             tools:ignore="SpeakableTextPresentCheck" />
@@ -62,17 +61,17 @@
             android:id="@+id/TransportationUpdateNameText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Name"
+            android:text="New Name"
             app:layout_constraintBottom_toTopOf="@+id/TransportationUpdateName"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.653"
+            app:layout_constraintHorizontal_bias="0.687"
             app:layout_constraintStart_toStartOf="parent" />
 
         <EditText
             android:id="@+id/TransportationUpdateName"
             android:layout_width="200dp"
             android:layout_height="48dp"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="24dp"
             android:ems="10"
             android:hint="Name"
             android:inputType="textCapCharacters"

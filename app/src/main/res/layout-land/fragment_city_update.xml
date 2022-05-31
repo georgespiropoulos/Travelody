@@ -26,44 +26,40 @@
             android:id="@+id/CityUpdateName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Name"
+            android:layout_marginEnd="163dp"
+            android:text="New Name"
             app:layout_constraintBottom_toTopOf="@+id/CityUpdateNameTextPlain"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.631"
-            app:layout_constraintStart_toStartOf="parent" />
+            app:layout_constraintEnd_toEndOf="parent" />
 
         <TextView
             android:id="@+id/ChooseCountryCityUpdateText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
             android:text="Choose Country"
             app:layout_constraintBottom_toTopOf="@+id/ChooseCountryCityUpdate"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.085"
             app:layout_constraintStart_toStartOf="parent" />
 
         <TextView
             android:id="@+id/CityUpdateID"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="City ID"
+            android:layout_marginStart="32dp"
+            android:text="City Name"
             app:layout_constraintBottom_toTopOf="@+id/CityUpdateChoose"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.077"
             app:layout_constraintStart_toStartOf="parent" />
 
         <EditText
             android:id="@+id/CityUpdateNameTextPlain"
             android:layout_width="200dp"
             android:layout_height="48dp"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginEnd="32dp"
             android:ems="10"
             android:hint="Name"
             android:inputType="textCapCharacters"
             android:textAlignment="center"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.844"
-            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/CityUpdateTitle" />
 
         <Button
@@ -83,11 +79,10 @@
             android:id="@+id/CityUpdateChoose"
             android:layout_width="200dp"
             android:layout_height="52dp"
-            android:layout_marginTop="20dp"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="24dp"
             android:background="@android:drawable/btn_dropdown"
             android:spinnerMode="dropdown"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.097"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/CityUpdateTitle"
             tools:ignore="SpeakableTextPresentCheck" />
@@ -96,11 +91,10 @@
             android:id="@+id/ChooseCountryCityUpdate"
             android:layout_width="200dp"
             android:layout_height="52dp"
-            android:layout_marginTop="20dp"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="24dp"
             android:background="@android:drawable/btn_dropdown"
             android:spinnerMode="dropdown"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.103"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/CityUpdateChoose"
             tools:ignore="SpeakableTextPresentCheck" />
