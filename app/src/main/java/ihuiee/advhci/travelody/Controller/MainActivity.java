@@ -26,10 +26,6 @@ import ihuiee.advhci.travelody.R;
 public class MainActivity extends AppCompatActivity {
     public static FragmentManager fragmentManager;
     public static AppDatabase database;
-    Toolbar toolbar;
-    DrawerLayout drawerLayout;
-    NavigationView navigationView;
-    ImageButton menuBtn;
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

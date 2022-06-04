@@ -84,15 +84,17 @@ public class TripResults extends Fragment {
             @Override
             public void onClick(View view) {
                 int id = deleteAdapter.tripToDelete();
-                try{
-                    Bundle bundle = new Bundle();
-                    bundle.putInt("trip_id", id);
-                    TransactionsForm form = new TransactionsForm();
-                    form.setArguments(bundle);
-                    fragmentManager.beginTransaction().replace(R.id.fragment_container, form).commit();
-                }catch (Exception e) {
-                    Toast.makeText(getActivity().getApplicationContext(), "Error", Toast.LENGTH_LONG).show();
-                }
+                if (id >= 0) {
+                    try {
+                        Bundle bundle = new Bundle();
+                        bundle.putInt("trip_id", id);
+                        TransactionsForm form = new TransactionsForm();
+                        form.setArguments(bundle);
+                        fragmentManager.beginTransaction().replace(R.id.fragment_container, form).commit();
+                    } catch (Exception e) {
+                        Toast.makeText(getActivity().getApplicationContext(), "Error", Toast.LENGTH_LONG).show();
+                    }
+                }else Toast.makeText(getActivity().getApplicationContext(), "Select a trip", Toast.LENGTH_LONG).show();
             }
         });
     }
